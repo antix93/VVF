@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="N° Distintivo"
-        android:id="@+id/textView"
+        android:id="@+id/textDis"
         android:layout_marginTop="34dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView"
+        android:id="@+id/TxtDis"
+        android:layout_below="@+id/textDis"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp" />
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Password"
-        android:id="@+id/textView2"
+        android:id="@+id/textPsw"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -39,23 +39,25 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/editText"
+        android:id="@+id/TxtPsw"
+        android:layout_below="@+id/textPsw"
+        android:layout_alignStart="@+id/TxtDis"
         android:layout_marginTop="59dp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/OkBtn"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ok"
-        android:id="@+id/button"
+        android:id="@+id/OkBtn"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:width="200dp"
+        android:height="20dp"/>
 </RelativeLayout>

@@ -6,7 +6,37 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.tizi.vvf.FireActivity1">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerca"
+        android:id="@+id/CerBtn"
+        android:width="300dp"
+        android:height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NuoIntBtn"
+        android:width="300dp"
+        android:height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Nuovo Intervento" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Archivio"
+        android:id="@+id/ArcBtn"
+        android:width="300dp"
+        android:height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
+
 
 </RelativeLayout>
