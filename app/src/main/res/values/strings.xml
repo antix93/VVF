@@ -3,5 +3,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_fire_activity1">FireKeeper</string>
+    <string name="IcoNome"></string>
+    <string name="NomeCs">M.Antico</string>
 
 </resources>
