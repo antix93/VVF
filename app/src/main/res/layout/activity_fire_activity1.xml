@@ -9,23 +9,24 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerca"
-        android:id="@+id/CerBtn"
+        android:id="@+id/NuoIntBtn"
         android:width="300dp"
         android:height="60dp"
+        android:text="Nuovo Intervento"
+        android:layout_marginTop="38dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_alignStart="@+id/CerBtn" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/NuoIntBtn"
+        android:text="Cerca"
+        android:id="@+id/CerBtn"
         android:width="300dp"
         android:height="60dp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="Nuovo Intervento" />
+        android:layout_alignStart="@+id/ArcBtn" />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -34,9 +35,9 @@
         android:id="@+id/ArcBtn"
         android:width="300dp"
         android:height="60dp"
+        android:layout_marginBottom="42dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

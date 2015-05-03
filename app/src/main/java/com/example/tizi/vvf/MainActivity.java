@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 
             public void onClick(View v) {
 
-                Toast toast = Toast.makeText(getApplicationContext(),"Sei stato autenticato",50);
+                Toast toast = Toast.makeText(getApplicationContext(),"Sei stato autenticato",Toast.LENGTH_LONG);
                 toast.show();
 
                 Intent intent = new Intent(v.getContext(), FireActivity1.class);

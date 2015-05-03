@@ -1,6 +1,7 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +23,11 @@ public class FireActivity1 extends Activity {
         return true;
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu){
+        menu.getItem(0).setEnabled(false);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -30,9 +36,11 @@ public class FireActivity1 extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        //if (id == R.id.action_settings) {
-        //    return true;
-        //}
+        if (id == R.id.IcoNome) {
+
+            Intent intent = new Intent(this, DettUtente.class);
+            startActivityForResult(intent, 0);
+        }
 
         return super.onOptionsItemSelected(item);
     }
