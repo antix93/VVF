@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="NomApp">FireKeeper</string>
+    <string name="app_name">FireKeeper</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_fire_activity1">FireKeeper</string>
     <string name="IcoNome"></string>
     <string name="NomeCs">M.Antico</string>
-    <string name="title_activity_dett_utente">Profilo</string>
+    <string name="title_activity_dett_utente">FireKeeper</string>
+    <string name="title_activity_principale1">FireKeeper</string>
 
     <string name="hello_world">Hello world!</string>
 

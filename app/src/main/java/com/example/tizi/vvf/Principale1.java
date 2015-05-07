@@ -5,34 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
-public class FireActivity1 extends Activity {
+public class Principale1 extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fire_activity1);
-
-        final Button NuoInt = (Button) findViewById(R.id.NuoIntBtn);
-
-        NuoInt.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), Principale1.class);
-                startActivityForResult(intent, 0);
-            }
-        });
+        setContentView(R.layout.activity_principale1);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_fire_activity1, menu);
+        getMenuInflater().inflate(R.menu.menu_principale1, menu);
         return true;
     }
 
@@ -41,7 +28,6 @@ public class FireActivity1 extends Activity {
         return super.onPrepareOptionsMenu(menu);
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -57,4 +43,5 @@ public class FireActivity1 extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
