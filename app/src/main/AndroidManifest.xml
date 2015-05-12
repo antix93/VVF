@@ -28,6 +28,14 @@
             android:name=".Principale1"
             android:label="@string/title_activity_principale1" >
         </activity>
+        <activity
+            android:name=".Tab1"
+            android:label="@string/title_activity_tab1" >
+        </activity>
+        <activity
+            android:name=".Tab2"
+            android:label="@string/title_activity_tab2" >
+        </activity>
     </application>
 
 </manifest>

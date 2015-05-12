@@ -8,7 +8,16 @@
     <string name="NomeCs">M.Antico</string>
     <string name="title_activity_dett_utente">FireKeeper</string>
     <string name="title_activity_principale1">FireKeeper</string>
+    <string name="title_activity_tab1">FireKeeper</string>
+    <string name="title_activity_tab2">FireKeeper</string>
 
-    <string name="hello_world">Hello world!</string>
+
+    <string name="body1">one</string>
+    <string name="body2">two</string>
+    <string name="body3">three</string>
+    <string name="label1">Tab 1</string>
+    <string name="label2">Tab 2</string>
+    <string name="label3">Tab 3</string>
+
 
 </resources>
