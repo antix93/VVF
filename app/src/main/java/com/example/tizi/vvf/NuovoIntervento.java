@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Principale1 extends FragmentActivity {
+public class NuovoIntervento extends FragmentActivity {
 
     CollectionPagerAdapter mCollectionPagerAdapter;
 
@@ -25,7 +25,7 @@ public class Principale1 extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principale1);
+        setContentView(R.layout.activity_nuovo_intervento);
 
         // Create an adapter that when requested, will return a fragment
         // representing an object in
@@ -129,7 +129,7 @@ public class Principale1 extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_principale1, menu);
+        getMenuInflater().inflate(R.menu.menu_nuovo_intervento, menu);
         return true;
     }
 

@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class FireActivity1 extends Activity {
+public class MainMenu extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fire_activity1);
+        setContentView(R.layout.activity_main_menu);
 
         final Button NuoInt = (Button) findViewById(R.id.NuoIntBtn);
 
@@ -22,7 +22,18 @@ public class FireActivity1 extends Activity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), Principale1.class);
+                Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        final Button CerBtn = (Button) findViewById(R.id.CerBtn);
+
+        CerBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), CercaIntervento.class);
                 startActivityForResult(intent, 0);
             }
         });

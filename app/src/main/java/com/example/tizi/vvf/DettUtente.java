@@ -22,7 +22,7 @@ public class DettUtente extends Activity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), FireActivity1.class);
+                Intent intent = new Intent(v.getContext(), MainMenu.class);
                 startActivityForResult(intent, 0);
             }
         });
