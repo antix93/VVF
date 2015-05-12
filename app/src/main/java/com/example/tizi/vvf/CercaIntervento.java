@@ -39,7 +39,7 @@ public class CercaIntervento extends Activity {
                 startActivityForResult(intent, 0);
             }
         });
-        final EditText Motivo = (EditText) findViewById(R.id.Motivo);
+        /* final EditText Motivo = (EditText) findViewById(R.id.Motivo);
         Motivo.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -47,7 +47,7 @@ public class CercaIntervento extends Activity {
                 // TODO Auto-generated method stub
                 new NumberPicker(v.getContext());
             }
-        });
+        }); */
     }
 
 
