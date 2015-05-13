@@ -37,6 +37,17 @@ public class MainMenu extends Activity {
                 startActivityForResult(intent, 0);
             }
         });
+
+        final Button ArcBtn = (Button) findViewById(R.id.ArcBtn);
+
+        ArcBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), ArchivioIntervento.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
 

@@ -28,6 +28,7 @@ public class LogIn extends Activity {
                 startActivityForResult(intent, 0);
             }
         });
+
     }
 
 }
