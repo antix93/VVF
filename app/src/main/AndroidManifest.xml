@@ -40,6 +40,10 @@
             android:name=".CercaIntervento"
             android:label="@string/title_activity_cerca_intervento" >
         </activity>
+        <activity
+            android:name=".ArchivioIntervento"
+            android:label="@string/title_activity_archivio_intervento" >
+        </activity>
     </application>
 
 </manifest>
