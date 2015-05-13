@@ -8,6 +8,7 @@
         android:showAsAction="ifRoom" />
 
     <item android:id="@+id/IcoNome"
+        android:title="icon"
         android:icon="@drawable/ic_action_person"
         android:orderInCategory="100"
         android:showAsAction="always|withText" />
