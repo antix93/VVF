@@ -7,17 +7,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainMenu extends Activity {
-
+    public Intervento[] interventi;
+    private Button NuoInt;
+    private Button CerBtn;
+    private Button ArcBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
-        final Button NuoInt = (Button) findViewById(R.id.NuoIntBtn);
-
+        interventi = new Intervento[10];
+        NuoInt = (Button) findViewById(R.id.NuoIntBtn);
+        CerBtn = (Button) findViewById(R.id.CerBtn);
+        ArcBtn = (Button) findViewById(R.id.ArcBtn);
         NuoInt.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -27,30 +32,48 @@ public class MainMenu extends Activity {
             }
         });
 
-        final Button CerBtn = (Button) findViewById(R.id.CerBtn);
+
 
         CerBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), CercaIntervento.class);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, 1);
             }
         });
 
-        final Button ArcBtn = (Button) findViewById(R.id.ArcBtn);
+
 
         ArcBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), ArchivioIntervento.class);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, 2);
             }
         });
+
+
+
+
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        if (requestCode == 0) {
+            if(resultCode == 0){
+                //congela
+                data.getStringExtra("prova");
+                Toast toast = Toast.makeText(getApplicationContext(), "Dati ritornati ", Toast.LENGTH_LONG);
+                toast.show();
+
+            }else{
+                //nuovo
+            }
+
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

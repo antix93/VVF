@@ -28,7 +28,17 @@ public class NuovoIntervento extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuovo_intervento);
+        final Button indietro = (Button) findViewById(R.id.AnnBtn);
+        indietro.setOnClickListener(new View.OnClickListener(){
 
+                                        public void onClick(View v){
+                                            Intent resultIntent = new Intent();
+                                            resultIntent.putExtra("prova", "valore");
+                                            setResult(0, resultIntent);
+                                            finish();
+                                       }
+                                    }
+        );
         // Create an adapter that when requested, will return a fragment
         // representing an object in
         // the collection.

@@ -45,6 +45,7 @@ public class CercaIntervento extends Activity {
                 startActivityForResult(intent, 0);
             }
         });
+       //Keyboard Managemen
         RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
         final EditText searchEditText = (EditText) findViewById(R.id.Motivo);
 
@@ -67,15 +68,8 @@ public class CercaIntervento extends Activity {
                 return false;
             }
         });
-        /* final EditText Motivo = (EditText) findViewById(R.id.Motivo);
-        Motivo.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                new NumberPicker(v.getContext());
-            }
-        }); */
+
     }
 
 
