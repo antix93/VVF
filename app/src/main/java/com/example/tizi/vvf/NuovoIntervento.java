@@ -129,11 +129,22 @@ public class NuovoIntervento extends FragmentActivity {
                     tabLayout = R.layout.activity_tab1;
                     rootView = inflater.inflate(tabLayout, container, false);
 
+                    //BOTTONE PER ENTI INTERVENUTI
                     Button EntIntBtn = (Button) rootView.findViewById(R.id.EntIntBtn);
                     EntIntBtn.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), EntiIntervenuti.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    //BOTTONE PER MEZZI INTERVENUTI
+                    Button MezIntBtn = (Button) rootView.findViewById(R.id.MezIntBtn);
+                    MezIntBtn.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), MezziIntervenuti.class);
                             startActivity(intent);
                         }
                     });

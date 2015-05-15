@@ -18,7 +18,7 @@ public class LogIn extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_Log_In);
+        setContentView(R.layout.activity_log_in);
 
         final Button OkButton = (Button) findViewById(R.id.OkBtn);
 

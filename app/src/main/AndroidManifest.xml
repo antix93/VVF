@@ -48,6 +48,10 @@
             android:name=".EntiIntervenuti"
             android:label="@string/title_activity_enti_intervenuti" >
         </activity>
+        <activity
+            android:name=".MezziIntervenuti"
+            android:label="@string/title_activity_mezzi_intervenuti" >
+        </activity>
     </application>
 
 </manifest>

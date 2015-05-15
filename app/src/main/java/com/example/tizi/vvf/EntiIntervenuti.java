@@ -40,6 +40,11 @@ public class EntiIntervenuti extends Activity {
         return true;
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu){
+        menu.getItem(0).setEnabled(false);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -48,8 +53,10 @@ public class EntiIntervenuti extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.IcoNome) {
+
+            Intent intent = new Intent(this, DettUtente.class);
+            startActivityForResult(intent, 0);
         }
 
         return super.onOptionsItemSelected(item);
