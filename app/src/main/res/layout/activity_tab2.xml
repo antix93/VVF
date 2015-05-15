@@ -25,6 +25,15 @@
         android:layout_toEndOf="@+id/textView10"
         android:layout_marginStart="31dp" />
 
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock2"
+        android:format24Hour="MMM dd, yyyy"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/NumInt"
+        android:layout_alignParentEnd="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,22 +60,22 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/imgMaps"
         android:background="@drawable/maps"
-        android:clickable="false"
-        android:layout_marginBottom="66dp"
+        android:layout_marginBottom="51dp"
         android:layout_above="@+id/OraBtn"
-        android:layout_toStartOf="@+id/NumInt" />
+        android:layout_alignEnd="@+id/textView10" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Camera"
-        android:id="@+id/CamBtn"
-        android:width="140dp"
-        android:height="100dp"
-        android:layout_alignTop="@+id/imageButton"
+        android:id="@+id/imgCamera"
+        android:background="@drawable/camera"
+        android:layout_marginEnd="31dp"
+        android:layout_alignTop="@+id/imgMaps"
         android:layout_alignEnd="@+id/OraBtn" />
+
+
 
     <Button
         android:layout_width="wrap_content"
@@ -78,6 +87,7 @@
         android:layout_alignEnd="@+id/MezIntBtn"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
+
 
 
 </RelativeLayout>

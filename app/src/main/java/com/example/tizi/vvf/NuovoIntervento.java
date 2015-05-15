@@ -113,18 +113,32 @@ public class NuovoIntervento extends FragmentActivity {
             int position = args.getInt(ARG_OBJECT);
 
             int tabLayout = 0;
+            View rootView = null;
             switch (position) {
                 case 0:
                     tabLayout = R.layout.activity_tab1;
+                    rootView = inflater.inflate(tabLayout, container, false);
+
+                    Button EntIntBtn = (Button) rootView.findViewById(R.id.EntIntBtn);
+                    EntIntBtn.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), EntiIntervenuti.class);
+                            startActivity(intent);
+                        }
+                    });
+
+
+
                     break;
                 case 1:
                     tabLayout = R.layout.activity_tab2;
+                    rootView = inflater.inflate(tabLayout, container, false);
                     break;
             }
 
-            View rootView = inflater.inflate(tabLayout, container, false);
-
             return rootView;
+
         }
     }
 

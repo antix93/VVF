@@ -44,6 +44,10 @@
             android:name=".ArchivioIntervento"
             android:label="@string/title_activity_archivio_intervento" >
         </activity>
+        <activity
+            android:name=".EntiIntervenuti"
+            android:label="@string/title_activity_enti_intervenuti" >
+        </activity>
     </application>
 
 </manifest>

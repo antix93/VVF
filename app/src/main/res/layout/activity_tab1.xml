@@ -26,6 +26,16 @@
         android:layout_toEndOf="@+id/textView10"
         android:layout_marginStart="31dp" />
 
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:layout_alignEnd="@+id/OraBtn"
+        android:layout_above="@+id/MotIntBtn"
+        android:format24Hour="MMM dd, yyyy"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/NumInt"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
