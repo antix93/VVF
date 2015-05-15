@@ -13,6 +13,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
 
 
 public class NuovoIntervento extends FragmentActivity {
@@ -48,6 +50,7 @@ public class NuovoIntervento extends FragmentActivity {
         // Set up the ViewPager, attaching the adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mCollectionPagerAdapter);
+
     }
 
     /**
