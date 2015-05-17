@@ -42,6 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:checked="false"
+        android:layout_marginTop="15dp"
         android:textSize="22dp" />
 
     <CheckBox
@@ -116,8 +117,255 @@
         android:ems="10"
         android:id="@+id/editText"
         android:layout_toEndOf="@+id/textView13"
-        android:width="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/CkbAutoscala" />
+        android:width="60dp"
+        android:layout_above="@+id/CkbAutoscala"
+        android:layout_alignTop="@+id/textView12"
+        android:paddingBottom="5dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView12"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_toStartOf="@+id/editText3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:width="60dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignEnd="@+id/ConfBtn"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView12"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Km"
+        android:id="@+id/textView14"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/CkbAutoscala"
+        android:layout_alignStart="@+id/textView13" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:width="60dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_above="@+id/CkbAutoBotte"
+        android:layout_toEndOf="@+id/textView14" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView15"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignStart="@+id/textView12" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:width="60dp"
+        android:textSize="22dp"
+        android:paddingBottom="5dp"
+        android:layout_alignTop="@+id/editText4"
+        android:layout_toEndOf="@+id/textView15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Km"
+        android:id="@+id/textView16"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/CkbAutoBotte"
+        android:layout_alignStart="@+id/textView14" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText6"
+        android:width="60dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_alignBottom="@+id/CkbAutoBotte"
+        android:layout_alignStart="@+id/editText4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView17"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_alignStart="@+id/textView15" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText7"
+        android:width="60dp"
+        android:textSize="22dp"
+        android:paddingBottom="5dp"
+        android:layout_above="@+id/CkbGru"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Km"
+        android:id="@+id/textView18"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/CkbGru"
+        android:layout_alignStart="@+id/textView16" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText8"
+        android:width="60dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_above="@+id/CkbBarca"
+        android:layout_toEndOf="@+id/textView18" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView19"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView18"
+        android:layout_toEndOf="@+id/editText8"
+        android:layout_alignStart="@+id/textView17" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText9"
+        android:width="60dp"
+        android:textSize="22dp"
+        android:paddingBottom="5dp"
+        android:layout_above="@+id/CkbBarca"
+        android:layout_toEndOf="@+id/textView19" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Km"
+        android:id="@+id/textView20"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/CkbBarca"
+        android:layout_alignStart="@+id/textView18" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText10"
+        android:width="60dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView20"
+        android:layout_above="@+id/CkbAnfibio"
+        android:layout_toEndOf="@+id/textView20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView21"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView20"
+        android:layout_alignStart="@+id/textView19" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText11"
+        android:width="60dp"
+        android:textSize="22dp"
+        android:paddingBottom="5dp"
+        android:layout_alignBottom="@+id/editText10"
+        android:layout_alignStart="@+id/editText9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Km"
+        android:id="@+id/textView22"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/CkbAnfibio"
+        android:layout_alignStart="@+id/textView20" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText12"
+        android:width="60dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/editText13"
+        android:layout_toEndOf="@+id/textView22" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Lt"
+        android:id="@+id/textView23"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/textView22"
+        android:layout_toStartOf="@+id/editText13" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText13"
+        android:width="60dp"
+        android:textSize="22dp"
+        android:paddingBottom="5dp"
+        android:layout_alignBottom="@+id/CkbAnfibio"
+        android:layout_alignStart="@+id/editText11" />
 
 </RelativeLayout>
