@@ -63,9 +63,9 @@ public class MainMenu extends Activity {
 
         if (requestCode == 0) {
             if(resultCode == 0){
-                //congela
-                data.getStringExtra("prova");
-                Toast toast = Toast.makeText(getApplicationContext(), "Dati ritornati ", Toast.LENGTH_LONG);
+                //annulla
+                //data.getStringExtra("prova");
+                Toast toast = Toast.makeText(getApplicationContext(), data.getStringExtra("prova"), Toast.LENGTH_LONG);
                 toast.show();
 
             }else{
