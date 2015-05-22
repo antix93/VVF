@@ -68,13 +68,13 @@ public class MainMenu extends Activity {
                 //data.getStringExtra("prova");
                 Toast toast = Toast.makeText(getApplicationContext(), "Annullato", Toast.LENGTH_LONG);
                 toast.show();
-
+                NuoInt.setText("Nuovo Intervento");
             }else{
                 //nuovo
                 if(resultCode == 1){
                     Toast toast = Toast.makeText(getApplicationContext(), "Confermato", Toast.LENGTH_LONG);
                     toast.show();
-
+                    NuoInt.setText("Nuovo Intervento");
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Congelato", Toast.LENGTH_LONG);
                     toast.show();
