@@ -23,6 +23,7 @@ public class MainMenu extends Activity {
         NuoInt = (Button) findViewById(R.id.NuoIntBtn);
         CerBtn = (Button) findViewById(R.id.CerBtn);
         ArcBtn = (Button) findViewById(R.id.ArcBtn);
+
         NuoInt.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -65,11 +66,20 @@ public class MainMenu extends Activity {
             if(resultCode == 0){
                 //annulla
                 //data.getStringExtra("prova");
-                Toast toast = Toast.makeText(getApplicationContext(), data.getStringExtra("prova"), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(), "Annullato", Toast.LENGTH_LONG);
                 toast.show();
 
             }else{
                 //nuovo
+                if(resultCode == 1){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Confermato", Toast.LENGTH_LONG);
+                    toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Congelato", Toast.LENGTH_LONG);
+                    toast.show();
+                    NuoInt.setText("Continua Intervento");
+                }
             }
 
         }

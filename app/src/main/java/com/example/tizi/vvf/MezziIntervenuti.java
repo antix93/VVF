@@ -16,18 +16,27 @@ public class MezziIntervenuti extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mezzi_intervenuti);
-
+        //Annulla
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
-
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
-                Toast toast = Toast.makeText(getApplicationContext(),"Annullato",Toast.LENGTH_LONG);
-                toast.show();
+                setResult(0);
+                finish();
+            }
+        });
+        //Conferma
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
 
-                Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
-                startActivityForResult(intent, 0);
+            public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("mezzo1", "Scala");
+                resultIntent.putExtra("km1", 23.3);
+                resultIntent.putExtra("lt1", 32);
+                setResult(1, resultIntent);
+                finish();
             }
         });
     }

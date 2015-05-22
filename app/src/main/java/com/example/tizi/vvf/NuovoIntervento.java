@@ -14,29 +14,49 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
 
 
 public class NuovoIntervento extends FragmentActivity {
 
     CollectionPagerAdapter mCollectionPagerAdapter;
-
+    protected Intervento intervento;
     ViewPager mViewPager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        intervento = new Intervento();
         setContentView(R.layout.activity_nuovo_intervento);
+
         final Button indietro = (Button) findViewById(R.id.AnnBtn);
-        indietro.setOnClickListener(new View.OnClickListener(){
+        indietro.setOnClickListener(new View.OnClickListener() {
+
+                                        public void onClick(View v) {
+
+                                            setResult(0);
+                                            finish();
+                                        }
+                                    }
+        );
+        final Button conferma = (Button) findViewById(R.id.CnfBtn);
+        conferma.setOnClickListener(new View.OnClickListener(){
 
                                         public void onClick(View v){
-                                            Intent resultIntent = new Intent();
-                                            resultIntent.putExtra("prova", "valore");
-                                            setResult(0, resultIntent);
+
+                                            setResult(1);
                                             finish();
-                                       }
+                                        }
+                                    }
+        );
+        final Button congela = (Button) findViewById(R.id.CngBtn);
+        congela.setOnClickListener(new View.OnClickListener(){
+
+                                        public void onClick(View v){
+
+                                            setResult(2);
+                                            finish();
+                                        }
                                     }
         );
         // Create an adapter that when requested, will return a fragment
@@ -63,6 +83,30 @@ public class NuovoIntervento extends FragmentActivity {
 
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //se confermato
+        if(resultCode == 1) {
+            switch (requestCode) {
+                //gestione dati enti
+                case 0:
+                    String[] stringa = new String[2];
+                    stringa[0] = data.getStringExtra("ente1");
+                    stringa[1] = data.getStringExtra("ente2");
+                    intervento.entiIntervenuti = stringa;
+                    break;
+                //gestione dati mezzi
+                case 1:
+                    String[] mezzi = new String[1];
+                    mezzi[0] = data.getStringExtra("mezzo1");
+                    intervento.mezziIntervenuti = mezzi;
+                    break;
+                case 2:
+                    intervento.orarioArrivo = data.getStringExtra("orario1");
+                    break;
+
+            }
+        }
+    }
     /**
      * A {@link android.support.v4.app.FragmentStatePagerAdapter} that returns a
      * fragment representing an object in the collection.
@@ -135,7 +179,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), EntiIntervenuti.class);
-                            startActivity(intent);
+                            startActivityForResult(intent, 0);
                         }
                     });
 
@@ -145,7 +189,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), MezziIntervenuti.class);
-                            startActivity(intent);
+                            startActivityForResult(intent, 1);
                         }
                     });
 
@@ -155,7 +199,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), orari.class);
-                            startActivity(intent);
+                            startActivityForResult(intent, 2);
                         }
                     });
 

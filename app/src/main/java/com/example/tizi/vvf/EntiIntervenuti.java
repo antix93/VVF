@@ -21,13 +21,22 @@ public class EntiIntervenuti extends Activity {
 
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
+                                         public void onClick(View v) {
+
+                                             setResult(0);
+                                             finish();
+                                         }
+                                     }
+        );
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-
-                Toast toast = Toast.makeText(getApplicationContext(),"Annullato",Toast.LENGTH_LONG);
-                toast.show();
-
-                Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
-                startActivityForResult(intent, 0);
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("ente1", "carabinieri");
+                resultIntent.putExtra("ente2", "polizia");
+                setResult(1, resultIntent);
+                finish();
             }
         });
     }

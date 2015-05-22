@@ -18,17 +18,25 @@ public class orari extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orari);
 
+        //Annulla
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
-
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
-                Toast toast = Toast.makeText(getApplicationContext(),"Annullato",Toast.LENGTH_LONG);
-                toast.show();
+                setResult(0);
+                finish();
+            }
+        });
+        //Conferma
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
 
-                Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("orario1", "22:30");
+                setResult(1, resultIntent);
+                finish();
             }
         });
 
