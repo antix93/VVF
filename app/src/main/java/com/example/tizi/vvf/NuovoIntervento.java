@@ -1,7 +1,10 @@
 package com.example.tizi.vvf;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.ActionBar;
@@ -14,6 +17,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import java.io.File;
+import java.util.Date;
 
 
 public class NuovoIntervento extends FragmentActivity {
@@ -209,7 +216,40 @@ public class NuovoIntervento extends FragmentActivity {
                 case 1:
                     tabLayout = R.layout.activity_tab2;
                     rootView = inflater.inflate(tabLayout, container, false);
+
+                    /*BOTTONE PER Maps
+                    Button Maps = (Button) rootView.findViewById(R.id.imgMaps);
+                    Maps.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), orari.class);
+                            startActivityForResult(intent, 2);
+                        }
+                    });
+                    */
+
+                    //BOTTONE PER FOTOCAMERA
+                    ImageButton Camera = (ImageButton) rootView.findViewById(R.id.imgCamera);
+
+                    Camera.setOnClickListener(new View.OnClickListener() {
+
+                        public void onClick(View v) {
+
+                            String name = "Immagine01";
+                            File destination = new File(Environment
+                                    .getExternalStorageDirectory(), name + ".jpg");
+
+                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                    Uri.fromFile(destination));
+                            startActivityForResult(intent, 2);
+
+                        }
+                    });
+
                     break;
+
+
             }
 
             return rootView;
