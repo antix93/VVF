@@ -1,17 +1,22 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import android.support.v4.app.FragmentActivity;
 
 
-public class orari extends Activity {
+
+public class orari extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,18 @@ public class orari extends Activity {
         });
 
 
+    }
+
+    public void showDialog(View view){
+        DialogHandler dialogHandler = new DialogHandler();
+        dialogHandler.show(getFragmentManager(),"time_picker");
+
+        //Ora senza keyboard
+
+        EditText yourEditText= (EditText) findViewById(R.id.TxtUsc);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(yourEditText, InputMethodManager.SHOW_IMPLICIT);
+        imm.hideSoftInputFromWindow(yourEditText.getWindowToken(), 0);
     }
 
     public boolean onPrepareOptionsMenu(Menu menu){
