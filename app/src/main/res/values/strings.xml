@@ -23,6 +23,7 @@
     <string name="title_activity_archivio_intervento">FireKeeper - Archivio</string>
     <string name="title_activity_enti_intervenuti">FireKeeper - Enti </string>
     <string name="title_activity_mezzi_intervenuti">FireKeeper - Mezzi</string>
+    <string name="title_activity_orari">FireKeeper - Orari</string>
 
 
 </resources>

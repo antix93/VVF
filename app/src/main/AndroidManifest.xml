@@ -52,6 +52,10 @@
             android:name=".MezziIntervenuti"
             android:label="@string/title_activity_mezzi_intervenuti" >
         </activity>
+        <activity
+            android:name=".orari"
+            android:label="@string/title_activity_orari" >
+        </activity>
     </application>
 
 </manifest>
