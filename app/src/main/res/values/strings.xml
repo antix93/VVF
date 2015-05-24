@@ -24,6 +24,8 @@
     <string name="title_activity_enti_intervenuti">FireKeeper - Enti </string>
     <string name="title_activity_mezzi_intervenuti">FireKeeper - Mezzi</string>
     <string name="title_activity_orari">FireKeeper - Orari</string>
+    <string name="title_activity_dettaglio_anagrafica">FireKeeper - Anagrafica</string>
+    <string name="title_activity_note">FireKeeper - Note</string>
 
 
 </resources>

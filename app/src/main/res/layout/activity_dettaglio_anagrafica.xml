@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.tizi.vvf.DettaglioAnagrafica"
+    android:id="@id/layoutRelative">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/line"
+        android:layout_above="@+id/ConfBtn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conferma"
+        android:id="@+id/ConfBtn"
+        android:width="160dp"
+        android:height="20dp"
+        android:layout_alignTop="@+id/AnnBtn"
+        android:layout_alignEnd="@+id/line" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Annulla"
+        android:id="@+id/AnnBtn"
+        android:width="160dp"
+        android:height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Richiedente"
+        android:id="@+id/textView28"
+        android:textSize="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/textView29"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TxtRic"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_below="@+id/textView28"
+        android:layout_alignStart="@+id/TxtPro"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Proprietario"
+        android:id="@+id/textView29"
+        android:layout_below="@+id/TxtRic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TxtPro"
+        android:layout_below="@+id/textView29"
+        android:paddingBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Affittuario"
+        android:id="@+id/textView30"
+        android:layout_below="@+id/TxtPro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TxtAff"
+        android:layout_below="@+id/textView30"
+        android:paddingBottom="5dp"
+        android:layout_alignStart="@+id/TxtPro"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Altro"
+        android:id="@+id/textView31"
+        android:layout_below="@+id/TxtAff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/TxtAlt"
+        android:layout_below="@+id/textView31"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="22dp" />
+</RelativeLayout>

@@ -56,6 +56,14 @@
             android:name=".orari"
             android:label="@string/title_activity_orari" >
         </activity>
+        <activity
+            android:name=".DettaglioAnagrafica"
+            android:label="@string/title_activity_dettaglio_anagrafica" >
+        </activity>
+        <activity
+            android:name=".Note"
+            android:label="@string/title_activity_note" >
+        </activity>
     </application>
 
 </manifest>

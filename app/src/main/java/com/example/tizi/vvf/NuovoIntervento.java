@@ -217,6 +217,26 @@ public class NuovoIntervento extends FragmentActivity {
                     tabLayout = R.layout.activity_tab2;
                     rootView = inflater.inflate(tabLayout, container, false);
 
+                    //BOTTONE DETTAGLIO ANAGRAFICA
+                    Button DetAna = (Button) rootView.findViewById(R.id.DetAnaBtn);
+                    DetAna.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), DettaglioAnagrafica.class);
+                            startActivityForResult(intent, 2);
+                        }
+                    });
+
+                    //NOTE
+                    Button Note = (Button) rootView.findViewById(R.id.NotBtn);
+                    Note.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), Note.class);
+                            startActivityForResult(intent, 2);
+                        }
+                    });
+
                     /*BOTTONE PER Maps
                     Button Maps = (Button) rootView.findViewById(R.id.imgMaps);
                     Maps.setOnClickListener(new View.OnClickListener() {
