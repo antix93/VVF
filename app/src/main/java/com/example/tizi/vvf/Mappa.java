@@ -2,6 +2,8 @@ package com.example.tizi.vvf;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -17,6 +19,17 @@ public class Mappa extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mappa);
         setUpMapIfNeeded();
+
+        //Annulla
+        final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        AnnButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                setResult(0);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -60,6 +73,6 @@ public class Mappa extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(45.927218, 8.559607)).title("VVF - Comando"));
     }
 }
