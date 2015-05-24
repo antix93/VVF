@@ -26,6 +26,7 @@
     <string name="title_activity_orari">FireKeeper - Orari</string>
     <string name="title_activity_dettaglio_anagrafica">FireKeeper - Anagrafica</string>
     <string name="title_activity_note">FireKeeper - Note</string>
+    <string name="title_activity_mappa">FireKeeper - Mappa</string>
 
 
 </resources>

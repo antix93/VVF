@@ -237,16 +237,16 @@ public class NuovoIntervento extends FragmentActivity {
                         }
                     });
 
-                    /*BOTTONE PER Maps
-                    Button Maps = (Button) rootView.findViewById(R.id.imgMaps);
+                    //BOTTONE PER MAPS
+                    ImageButton Maps = (ImageButton) rootView.findViewById(R.id.imgMaps);
                     Maps.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getActivity(), orari.class);
+                            Intent intent = new Intent(getActivity(), Mappa.class);
                             startActivityForResult(intent, 2);
                         }
                     });
-                    */
+
 
                     //BOTTONE PER FOTOCAMERA
                     ImageButton Camera = (ImageButton) rootView.findViewById(R.id.imgCamera);
