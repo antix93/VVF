@@ -87,6 +87,10 @@
             android:name=".Mappa"
             android:label="@string/title_activity_mappa" >
         </activity>
+        <activity
+            android:name=".MotivoIntervento"
+            android:label="@string/title_activity_motivo_intervento" >
+        </activity>
     </application>
 
 </manifest>
