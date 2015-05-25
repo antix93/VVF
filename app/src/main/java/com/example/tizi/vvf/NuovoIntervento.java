@@ -181,6 +181,16 @@ public class NuovoIntervento extends FragmentActivity {
                     rootView = inflater.inflate(tabLayout, container, false);
 
                     //BOTTONE PER ENTI INTERVENUTI
+                    Button PerIntBtn = (Button) rootView.findViewById(R.id.PerIntBtn);
+                    PerIntBtn.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), PersonaleIntervenuto.class);
+                            startActivityForResult(intent, 0);
+                        }
+                    });
+
+                    //BOTTONE PER ENTI INTERVENUTI
                     Button EntIntBtn = (Button) rootView.findViewById(R.id.EntIntBtn);
                     EntIntBtn.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {

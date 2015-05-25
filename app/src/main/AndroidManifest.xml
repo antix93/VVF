@@ -91,6 +91,10 @@
             android:name=".MotivoIntervento"
             android:label="@string/title_activity_motivo_intervento" >
         </activity>
+        <activity
+            android:name=".PersonaleIntervenuto"
+            android:label="@string/title_activity_personale_intervenuto" >
+        </activity>
     </application>
 
 </manifest>

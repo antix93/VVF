@@ -28,6 +28,7 @@
     <string name="title_activity_note">FireKeeper - Note</string>
     <string name="title_activity_mappa">FireKeeper - Mappa</string>
     <string name="title_activity_motivo_intervento">FireKeeper - Motivo</string>
+    <string name="title_activity_personale_intervenuto">FireKeeper - Personale</string>
 
 
 </resources>
