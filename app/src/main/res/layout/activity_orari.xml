@@ -54,8 +54,9 @@
         android:layout_alignStart="@+id/TxtArr"
         android:width="100dp"
         android:textAlignment="center"
-        android:onClick="showDialog"
-        android:editable="false" />
+        android:editable="false"
+        android:enabled="true"
+        android:focusable="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,7 +78,10 @@
         android:layout_below="@+id/textView26"
         android:layout_centerHorizontal="true"
         android:width="100dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:editable="false"
+        android:enabled="true"
+        android:focusable="false"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,7 +103,10 @@
         android:layout_below="@+id/textView27"
         android:layout_centerHorizontal="true"
         android:width="100dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:editable="false"
+        android:enabled="true"
+        android:focusable="false"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,7 +127,10 @@
         android:layout_below="@+id/textView24"
         android:layout_centerHorizontal="true"
         android:width="100dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:editable="false"
+        android:enabled="true"
+        android:focusable="false"/>
 
 
 </RelativeLayout>
