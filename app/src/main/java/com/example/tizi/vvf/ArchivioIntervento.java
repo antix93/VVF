@@ -1,16 +1,20 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class ArchivioIntervento extends Activity {
@@ -33,12 +37,38 @@ public class ArchivioIntervento extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), MainMenu.class);
-                startActivityForResult(intent, 0);
+                setResult(0);
+                finish();
 
             }
 
             });
+
+        final ListView listview = (ListView) findViewById(R.id.listViewArchivio);
+        String[] values = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
+                "Incendio 27/02/2015", "Apertura Porta 27/01/2015", "Salvataggio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010" };
+
+        final ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < values.length; ++i) {
+            list.add(values[i]);
+        }
+        final StableArrayAdapter adapter = new StableArrayAdapter(this,
+                android.R.layout.simple_list_item_1, list);
+        listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                final String item = (String) parent.getItemAtPosition(position);
+
+                Intent intent = new Intent(view.getContext(), DettaglioIntervento.class);
+                startActivity(intent);
+            }
+
+        });
+
 
     };
 
@@ -65,4 +95,30 @@ public class ArchivioIntervento extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+}
+
+class StableArrayAdapter extends ArrayAdapter<String> {
+
+    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+
+    public StableArrayAdapter(Context context, int textViewResourceId,
+                              List<String> objects) {
+        super(context, textViewResourceId, objects);
+        for (int i = 0; i < objects.size(); ++i) {
+            mIdMap.put(objects.get(i), i);
+        }
+    }
+
+    @Override
+    public long getItemId(int position) {
+        String item = getItem(position);
+        return mIdMap.get(item);
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return true;
+    }
+
 }

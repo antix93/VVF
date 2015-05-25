@@ -30,5 +30,16 @@
     <string name="title_activity_motivo_intervento">FireKeeper - Motivo</string>
     <string name="title_activity_personale_intervenuto">FireKeeper - Personale</string>
 
+    <string name="intervento_incendio">Incendio</string>
+    <string name="intervento_incidente">Incidente Stradale</string>
+    <string name="intervento_apertura">Apertura Porta</string>
+    <string name="intervento_petrescue">Salvataggio</string>
+    <string name="periodo_1giorno">1 Giorno Fa </string>
+    <string name="periodo_3giorni">3 Giorni Fa</string>
+    <string name="periodo_1settimana">1 Settimana Fa</string>
+    <string name="periodo_mese">1 Mese Fa</string>
+    <string name="periodo_6mesi">6 Mesi Fa</string>
+    <string name="periodo_anno">Più Di Un Anno Fa</string>
+    <string name="title_activity_dettaglio_archivio">FireKeeper - Dettaglio</string>
 
 </resources>

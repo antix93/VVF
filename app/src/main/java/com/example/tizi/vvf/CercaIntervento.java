@@ -30,8 +30,8 @@ public class CercaIntervento extends Activity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), MainMenu.class);
-                startActivityForResult(intent, 0);
+                setResult(0);
+                finish();
             }
         });
 
@@ -41,11 +41,11 @@ public class CercaIntervento extends Activity {
 
             public void onClick(View v) {
                 //To-Do -> link to a new activity that shows result based on filter choice
-                Intent intent = new Intent(v.getContext(), MainMenu.class);
+                Intent intent = new Intent(v.getContext(), ArchivioIntervento.class);
                 startActivityForResult(intent, 0);
             }
         });
-       //Keyboard Managemen
+       /*Keyboard Management
         RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
         final EditText searchEditText = (EditText) findViewById(R.id.Motivo);
 
@@ -67,7 +67,7 @@ public class CercaIntervento extends Activity {
                 }
                 return false;
             }
-        });
+        }); */
 
 
     }

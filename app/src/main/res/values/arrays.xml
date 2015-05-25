@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_motivi">
+        <item>@string/intervento_incendio</item>
+        <item>@string/intervento_apertura</item>
+        <item>@string/intervento_incidente</item>
+        <item>@string/intervento_petrescue</item>
+    </string-array>
+    <string-array name="array_periodi">
+        <item>@string/periodo_1giorno</item>
+        <item>@string/periodo_3giorni</item>
+        <item>@string/periodo_1settimana</item>
+        <item>@string/periodo_mese</item>
+        <item>@string/periodo_6mesi</item>
+        <item>@string/periodo_anno</item>
+    </string-array>
+</resources>
