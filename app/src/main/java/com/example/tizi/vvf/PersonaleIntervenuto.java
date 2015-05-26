@@ -107,6 +107,16 @@ public class PersonaleIntervenuto extends Activity {
                 finish();
             }
         });
+
+        //Conferma
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                setResult(1);
+                finish();
+            }
+        });
     }
 
     public boolean onPrepareOptionsMenu(Menu menu){

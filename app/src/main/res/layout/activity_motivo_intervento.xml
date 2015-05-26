@@ -40,6 +40,63 @@
         android:text="Incendio"
         android:id="@+id/IncendioBtn"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/darker_gray"
+        android:textSize="22dp"
+        android:textAllCaps="false"
+        android:width="200dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incidente"
+        android:id="@+id/IncBtb"
+        android:layout_below="@+id/IncendioBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/darker_gray"
+        android:textSize="22dp"
+        android:textAllCaps="false"
+        android:width="200dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soccorso Persona"
+        android:id="@+id/SocBtn"
+        android:layout_below="@+id/IncBtb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/darker_gray"
+        android:textSize="22dp"
+        android:textAllCaps="false"
+        android:width="200dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lavaggio stradale"
+        android:id="@+id/LavBtn"
+        android:layout_below="@+id/SocBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/darker_gray"
+        android:textSize="22dp"
+        android:textAllCaps="false"
+        android:width="200dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apertura Porta"
+        android:id="@+id/ApeBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/darker_gray"
+        android:textSize="22dp"
+        android:layout_below="@+id/LavBtn"
+        android:layout_marginTop="40dp"
+        android:textAllCaps="false"
+        android:width="200dp"/>
 
 </RelativeLayout>
