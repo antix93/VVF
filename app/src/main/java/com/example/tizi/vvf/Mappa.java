@@ -30,6 +30,16 @@ public class Mappa extends FragmentActivity {
                 finish();
             }
         });
+
+        //Conferma
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                setResult(1);
+                finish();
+            }
+        });
     }
 
     @Override

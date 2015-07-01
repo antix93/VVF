@@ -1,6 +1,7 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,8 +31,10 @@ public class Tab2 extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.IcoNome) {
+
+            Intent intent = new Intent(this, DettUtente.class);
+            startActivityForResult(intent, 0);
         }
 
         return super.onOptionsItemSelected(item);

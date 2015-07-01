@@ -1,12 +1,17 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 
 public class Note extends Activity {
@@ -24,6 +29,41 @@ public class Note extends Activity {
 
                 setResult(0);
                 finish();
+            }
+        });
+
+        //Conferma
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        ConButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                setResult(1);
+                finish();
+            }
+        });
+
+        /* Keyboard Hider on Touch */
+        RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
+        final EditText NoteText = (EditText) findViewById(R.id.Note);
+        layoutRelative.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (NoteText.isFocused()) {
+                    if (event.getY() >= 72) {
+                        //Will only enter this if the EditText already has focus
+                        //And if a touch event happens outside of the EditText
+                        //Which in my case is at the top of my layout
+                        //and 72 pixels long
+                        NoteText.clearFocus();
+
+                        InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    }
+                }
+                return false;
             }
         });
     }

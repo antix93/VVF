@@ -24,7 +24,7 @@ public class CercaIntervento extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerca_intervento);
 
-        final Button Back = (Button) findViewById(R.id.BackButton);
+        final Button Back = (Button) findViewById(R.id.AnnBtn);
 
         Back.setOnClickListener(new View.OnClickListener() {
 
@@ -35,7 +35,7 @@ public class CercaIntervento extends Activity {
             }
         });
 
-        final Button Confirm = (Button) findViewById(R.id.ConfirmButton);
+        final Button Confirm = (Button) findViewById(R.id.ConfBtn);
 
         Confirm.setOnClickListener(new View.OnClickListener() {
 
@@ -80,6 +80,11 @@ public class CercaIntervento extends Activity {
         return true;
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu){
+        menu.getItem(0).setEnabled(false);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -88,8 +93,10 @@ public class CercaIntervento extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.IcoNome) {
+
+            Intent intent = new Intent(this, DettUtente.class);
+            startActivityForResult(intent, 0);
         }
 
         return super.onOptionsItemSelected(item);

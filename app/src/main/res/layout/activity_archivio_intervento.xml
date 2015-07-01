@@ -29,6 +29,8 @@
         android:layout_height="wrap_content"
         android:text="Annulla"
         android:id="@+id/AnnullaArchivio"
+        android:width="160dp"
+        android:height="20dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

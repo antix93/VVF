@@ -287,6 +287,16 @@ public class NuovoIntervento extends FragmentActivity {
                         }
                     });
 
+                    //BOTTONE PER ORARI
+                    Button OraBtn2 = (Button) rootView.findViewById(R.id.OraBtn);
+                    OraBtn2.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), orari.class);
+                            startActivityForResult(intent, 2);
+                        }
+                    });
+
                     break;
 
 

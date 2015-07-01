@@ -46,7 +46,8 @@ public class ArchivioIntervento extends Activity {
 
         final ListView listview = (ListView) findViewById(R.id.listViewArchivio);
         String[] values = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
-                "Incendio 27/02/2015", "Apertura Porta 27/01/2015", "Salvataggio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010" };
+                "Incendio 27/02/2015", "Apertura Porta 27/01/2015", "Salvataggio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010",
+                "Apertura Porta 20/02/2010"};
 
         final ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < values.length; ++i) {
@@ -55,7 +56,7 @@ public class ArchivioIntervento extends Activity {
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
-
+/*
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -67,7 +68,7 @@ public class ArchivioIntervento extends Activity {
                 startActivity(intent);
             }
 
-        });
+        });*/
 
 
     };
@@ -81,6 +82,11 @@ public class ArchivioIntervento extends Activity {
 
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu){
+        menu.getItem(0).setEnabled(false);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -89,8 +95,10 @@ public class ArchivioIntervento extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.IcoNome) {
+
+            Intent intent = new Intent(this, DettUtente.class);
+            startActivityForResult(intent, 0);
         }
 
         return super.onOptionsItemSelected(item);
