@@ -23,7 +23,7 @@ public class PersonaleIntervenuto extends Activity {
         int C1=0;
             public void onClick(View v) {
                 if (C1==0){
-                    PerBtn1.setBackgroundColor(Color.RED);
+                    PerBtn1.setBackgroundColor(Color.GREEN);
                     C1 = 1;
                 }else{
                     PerBtn1.setBackgroundColor(Color.GRAY);
@@ -39,7 +39,7 @@ public class PersonaleIntervenuto extends Activity {
             int C2=0;
             public void onClick(View v) {
                 if (C2==0){
-                    PerBtn2.setBackgroundColor(Color.RED);
+                    PerBtn2.setBackgroundColor(Color.GREEN);
                     C2 = 1;
                 }else{
                     PerBtn2.setBackgroundColor(Color.GRAY);
@@ -55,7 +55,7 @@ public class PersonaleIntervenuto extends Activity {
             int C3=0;
             public void onClick(View v) {
                 if (C3==0){
-                    PerBtn3.setBackgroundColor(Color.RED);
+                    PerBtn3.setBackgroundColor(Color.GREEN);
                     C3 = 1;
                 }else{
                     PerBtn3.setBackgroundColor(Color.GRAY);
@@ -71,7 +71,7 @@ public class PersonaleIntervenuto extends Activity {
             int C4=0;
             public void onClick(View v) {
                 if (C4==0){
-                    PerBtn4.setBackgroundColor(Color.RED);
+                    PerBtn4.setBackgroundColor(Color.GREEN);
                     C4 = 1;
                 }else{
                     PerBtn4.setBackgroundColor(Color.GRAY);
@@ -87,7 +87,7 @@ public class PersonaleIntervenuto extends Activity {
             int C5=0;
             public void onClick(View v) {
                 if (C5==0){
-                    PerBtn5.setBackgroundColor(Color.RED);
+                    PerBtn5.setBackgroundColor(Color.GREEN);
                     C5 = 1;
                 }else{
                     PerBtn5.setBackgroundColor(Color.GRAY);

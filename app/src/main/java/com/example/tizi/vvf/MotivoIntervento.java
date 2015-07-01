@@ -23,7 +23,7 @@ public class MotivoIntervento extends Activity {
             int C1=0;
             public void onClick(View v) {
                 if (C1==0){
-                    IncBtn.setBackgroundColor(Color.RED);
+                    IncBtn.setBackgroundColor(Color.GREEN);
                     C1 = 1;
                 }else{
                     IncBtn.setBackgroundColor(Color.GRAY);
@@ -39,7 +39,7 @@ public class MotivoIntervento extends Activity {
             int C2=0;
             public void onClick(View v) {
                 if (C2==0){
-                    IncidBtn.setBackgroundColor(Color.RED);
+                    IncidBtn.setBackgroundColor(Color.GREEN);
                     C2 = 1;
                 }else{
                     IncidBtn.setBackgroundColor(Color.GRAY);
@@ -55,7 +55,7 @@ public class MotivoIntervento extends Activity {
             int C3=0;
             public void onClick(View v) {
                 if (C3==0){
-                    SocPer.setBackgroundColor(Color.RED);
+                    SocPer.setBackgroundColor(Color.GREEN);
                     C3 = 1;
                 }else{
                     SocPer.setBackgroundColor(Color.GRAY);
@@ -71,7 +71,7 @@ public class MotivoIntervento extends Activity {
             int C4=0;
             public void onClick(View v) {
                 if (C4==0){
-                    LavStra.setBackgroundColor(Color.RED);
+                    LavStra.setBackgroundColor(Color.GREEN);
                     C4 = 1;
                 }else{
                     LavStra.setBackgroundColor(Color.GRAY);
@@ -87,7 +87,7 @@ public class MotivoIntervento extends Activity {
             int C5=0;
             public void onClick(View v) {
                 if (C5==0){
-                    ApePor.setBackgroundColor(Color.RED);
+                    ApePor.setBackgroundColor(Color.GREEN);
                     C5 = 1;
                 }else{
                     ApePor.setBackgroundColor(Color.GRAY);
