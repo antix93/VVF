@@ -1,6 +1,7 @@
 package com.example.tizi.vvf;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,13 +28,16 @@ public class NuovoIntervento extends FragmentActivity {
 
     CollectionPagerAdapter mCollectionPagerAdapter;
     protected Intervento intervento;
+
     ViewPager mViewPager;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        intervento = new Intervento();
+        intervento = new Intervento(1);
+
         setContentView(R.layout.activity_nuovo_intervento);
 
         final Button indietro = (Button) findViewById(R.id.AnnBtn);
@@ -61,6 +65,11 @@ public class NuovoIntervento extends FragmentActivity {
 
                                         public void onClick(View v){
 
+                                           /* Intent result = new Intent();
+                                            boolean[] selected;
+                                            selected = intervento.toArray();
+                                            result.putExtra("results", selected);
+                                            setResult(2, result);*/
                                             setResult(2);
                                             finish();
                                         }
@@ -90,30 +99,7 @@ public class NuovoIntervento extends FragmentActivity {
 
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //se confermato
-        if(resultCode == 1) {
-            switch (requestCode) {
-                //gestione dati enti
-                case 0:
-                    String[] stringa = new String[2];
-                    stringa[0] = data.getStringExtra("ente1");
-                    stringa[1] = data.getStringExtra("ente2");
-                    intervento.entiIntervenuti = stringa;
-                    break;
-                //gestione dati mezzi
-                case 1:
-                    String[] mezzi = new String[1];
-                    mezzi[0] = data.getStringExtra("mezzo1");
-                    intervento.mezziIntervenuti = mezzi;
-                    break;
-                case 2:
-                    intervento.orarioArrivo = data.getStringExtra("orario1");
-                    break;
 
-            }
-        }
-    }
     /**
      * A {@link android.support.v4.app.FragmentStatePagerAdapter} that returns a
      * fragment representing an object in the collection.
@@ -162,9 +148,10 @@ public class NuovoIntervento extends FragmentActivity {
      * A dummy fragment representing a section of the app, but that simply
      * displays dummy text.
      */
-    public static class TabFragment extends Fragment {
+    public class TabFragment extends Fragment {
 
         public static final String ARG_OBJECT = "object";
+        private Button MotIntBtn;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -181,7 +168,7 @@ public class NuovoIntervento extends FragmentActivity {
                     rootView = inflater.inflate(tabLayout, container, false);
 
                     //BOTTONE MOTIVO
-                    Button MotIntBtn = (Button) rootView.findViewById(R.id.MotIntBtn);
+                    MotIntBtn = (Button) rootView.findViewById(R.id.MotIntBtn);
                     MotIntBtn.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
 
@@ -196,7 +183,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), PersonaleIntervenuto.class);
-                            startActivityForResult(intent, 0);
+                            startActivityForResult(intent, 1);
                         }
                     });
 
@@ -206,7 +193,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), EntiIntervenuti.class);
-                            startActivityForResult(intent, 0);
+                            startActivityForResult(intent, 2);
                         }
                     });
 
@@ -216,7 +203,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), MezziIntervenuti.class);
-                            startActivityForResult(intent, 1);
+                            startActivityForResult(intent, 3);
                         }
                     });
 
@@ -226,7 +213,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), orari.class);
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 4);
                         }
                     });
 
@@ -243,7 +230,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), DettaglioAnagrafica.class);
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 5);
                         }
                     });
 
@@ -253,7 +240,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), Note.class);
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 6);
                         }
                     });
 
@@ -263,7 +250,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), Mappa.class);
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 7);
                         }
                     });
 
@@ -282,7 +269,7 @@ public class NuovoIntervento extends FragmentActivity {
                             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                             intent.putExtra(MediaStore.EXTRA_OUTPUT,
                                     Uri.fromFile(destination));
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 8);
 
                         }
                     });
@@ -293,7 +280,7 @@ public class NuovoIntervento extends FragmentActivity {
                         public void onClick(View v) {
 
                             Intent intent = new Intent(getActivity(), orari.class);
-                            startActivityForResult(intent, 2);
+                            startActivityForResult(intent, 9);
                         }
                     });
 
@@ -305,6 +292,64 @@ public class NuovoIntervento extends FragmentActivity {
             return rootView;
 
         }
+
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            //se confermato
+            if(resultCode == 1) {
+                switch (requestCode) {
+                    //gestione dati enti
+                    case 2:
+
+                        Button ente = (Button) findViewById(R.id.EntIntBtn);
+                        ente.setBackgroundColor(Color.GREEN);
+                        intervento.entiIntervenuti = true;
+                        break;
+                    //gestione motivo intervento
+                    case 0:
+
+                        MotIntBtn.setBackgroundColor(Color.GREEN);
+                        intervento.motivoIntervento = true;
+                        break;
+                    //personale intervenuto
+                    case 1:
+                        Button pers = (Button) findViewById(R.id.PerIntBtn);
+                        pers.setBackgroundColor(Color.GREEN);
+                        intervento.personaleIntervenuto = true;
+                        break;
+                    //mezzi
+                    case 3:
+                        Button mezzi = (Button) findViewById(R.id.MezIntBtn);
+                        mezzi.setBackgroundColor(Color.GREEN);
+                        intervento.mezziIntervenuti = true;
+                        break;
+                    //ora
+                    case 4:
+                        Button ora = (Button) findViewById(R.id.OraBtn);
+                        ora.setBackgroundColor(Color.GREEN);
+                        intervento.orari = true;
+                        break;
+                    //dettaglio
+                    case 5:
+                        Button dettaglio = (Button) findViewById(R.id.DetAnaBtn);
+                        dettaglio.setBackgroundColor(Color.GREEN);
+                        intervento.anagrafica = true;
+                        break;
+                    //note
+                    case 6:
+                        Button note = (Button) findViewById(R.id.NotBtn);
+                        note.setBackgroundColor(Color.GREEN);
+                        intervento.noteIntervento = true;
+                        break;
+                    case 9:
+                        Button ora2 = (Button) findViewById(R.id.OraBtn);
+                        ora2.setBackgroundColor(Color.GREEN);
+                        intervento.orari = true;
+                        break;
+
+                }
+            }
+        }
+
     }
 
 

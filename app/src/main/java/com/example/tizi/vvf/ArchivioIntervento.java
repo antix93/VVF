@@ -60,11 +60,10 @@ public class ArchivioIntervento extends Activity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
+            public void onItemClick(AdapterView<?> parent,  View v,
                                     int position, long id) {
-                final String item = (String) parent.getItemAtPosition(position);
 
-                Intent intent = new Intent(view.getContext(), DettaglioIntervento.class);
+                Intent intent = new Intent(v.getContext(), DettaglioIntervento.class);
                 startActivity(intent);
             }
 

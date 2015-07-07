@@ -15,8 +15,11 @@ public class MainMenu extends Activity {
     private Button NuoInt;
     private Button CerBtn;
     private Button ArcBtn;
+    public boolean[] array;
+    private boolean result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        result = false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         interventi = new Intervento[10];
@@ -28,8 +31,14 @@ public class MainMenu extends Activity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
-                startActivityForResult(intent, 0);
+                if (result == false) {
+                    Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
+                    startActivityForResult(intent, 0);
+                }else{
+                    Intent intent = new Intent(v.getContext(), NuovoIntervento.class);
+                    intent.putExtra("previousResults", array);
+                    startActivityForResult(intent, 0);
+                }
             }
         });
 
@@ -79,6 +88,8 @@ public class MainMenu extends Activity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Congelato", Toast.LENGTH_LONG);
                     toast.show();
                     NuoInt.setText("Continua Intervento");
+                   // array = data.getBooleanArrayExtra("results");
+                   // result = true;
                 }
             }
 

@@ -102,6 +102,7 @@
             android:name=".DettaglioArchivio"
             android:label="@string/title_activity_dettaglio_archivio" >
         </activity>
+
     </application>
 
 </manifest>
