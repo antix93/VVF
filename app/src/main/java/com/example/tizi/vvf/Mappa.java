@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -84,5 +85,9 @@ public class Mappa extends FragmentActivity {
      */
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(45.927218, 8.559607)).title("VVF - Comando"));
+        mMap.animateCamera(CameraUpdateFactory.zoomIn());
+
+        //Zoom in and animate the camera.
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.927218, 8.559607),18));
     }
 }
