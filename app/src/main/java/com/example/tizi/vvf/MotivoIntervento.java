@@ -19,83 +19,74 @@ public class MotivoIntervento extends Activity {
 
         //Bottone Personale 1
         final Button IncBtn = (Button) findViewById(R.id.IncendioBtn);
+        final Button IncidBtn = (Button) findViewById(R.id.IncBtb);
+        final Button SocPer = (Button) findViewById(R.id.SocBtn);
+        final Button LavStra = (Button) findViewById(R.id.LavBtn);
+        final Button ApePor = (Button) findViewById(R.id.ApeBtn);
         IncBtn.setOnClickListener(new View.OnClickListener() {
-            int C1=0;
+
+
             public void onClick(View v) {
-                if (C1==0){
+
+                    resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncBtn.setBackgroundColor(Color.GREEN);
-                    C1 = 1;
-                }else{
-                    IncBtn.setBackgroundColor(Color.GRAY);
-                    C1=0;
-                }
+
 
             }
         });
 
         //Bottone Personale 2
-        final Button IncidBtn = (Button) findViewById(R.id.IncBtb);
+
         IncidBtn.setOnClickListener(new View.OnClickListener() {
-            int C2=0;
+
+
             public void onClick(View v) {
-                if (C2==0){
+
+                    resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncidBtn.setBackgroundColor(Color.GREEN);
-                    C2 = 1;
-                }else{
-                    IncidBtn.setBackgroundColor(Color.GRAY);
-                    C2=0;
-                }
+
 
             }
         });
 
         //Bottone Personale 3
-        final Button SocPer = (Button) findViewById(R.id.SocBtn);
+
         SocPer.setOnClickListener(new View.OnClickListener() {
-            int C3=0;
+
+
             public void onClick(View v) {
-                if (C3==0){
+
+                    resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     SocPer.setBackgroundColor(Color.GREEN);
-                    C3 = 1;
-                }else{
-                    SocPer.setBackgroundColor(Color.GRAY);
-                    C3=0;
-                }
 
             }
         });
 
         //Bottone Personale 4
-        final Button LavStra = (Button) findViewById(R.id.LavBtn);
+
         LavStra.setOnClickListener(new View.OnClickListener() {
-            int C4=0;
+
             public void onClick(View v) {
-                if (C4==0){
+
+                    resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     LavStra.setBackgroundColor(Color.GREEN);
-                    C4 = 1;
-                }else{
-                    LavStra.setBackgroundColor(Color.GRAY);
-                    C4=0;
-                }
 
             }
         });
 
         //Bottone Personale 5
-        final Button ApePor = (Button) findViewById(R.id.ApeBtn);
+
         ApePor.setOnClickListener(new View.OnClickListener() {
-            int C5=0;
+
+
             public void onClick(View v) {
-                if (C5==0){
+
+                    resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     ApePor.setBackgroundColor(Color.GREEN);
-                    C5 = 1;
-                }else{
-                    ApePor.setBackgroundColor(Color.GRAY);
-                    C5=0;
-                }
 
             }
         });
+
         //Annulla
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
         AnnButton.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +109,13 @@ public class MotivoIntervento extends Activity {
 
     }
 
+    private void resetButton(Button incBtn, Button incidBtn, Button socPer, Button lavStra, Button apePor) {
+        incBtn.setBackgroundColor(Color.GRAY);
+        incidBtn.setBackgroundColor(Color.GRAY);
+        socPer.setBackgroundColor(Color.GRAY);
+        lavStra.setBackgroundColor(Color.GRAY);
+        apePor.setBackgroundColor(Color.GRAY);
+    }
 
 
     public boolean onPrepareOptionsMenu(Menu menu){

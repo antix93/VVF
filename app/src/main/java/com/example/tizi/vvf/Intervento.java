@@ -37,7 +37,6 @@ public class Intervento {
         array[4] = orari;
         array[5] = anagrafica;
         array[6] = noteIntervento;
-        array[7] = orari;
         return array;
     }
 }
