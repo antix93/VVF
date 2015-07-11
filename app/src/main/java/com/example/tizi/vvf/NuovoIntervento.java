@@ -1,5 +1,8 @@
 package com.example.tizi.vvf;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -43,38 +46,98 @@ public class NuovoIntervento extends FragmentActivity {
         final Button indietro = (Button) findViewById(R.id.AnnBtn);
         indietro.setOnClickListener(new View.OnClickListener() {
 
-                                        public void onClick(View v) {
+                                        public void onClick(View v){
+                                            AlertDialog alert = new AlertDialog.Builder(NuovoIntervento.this).create();
+                                            alert.setTitle("Annulla");
+                                            alert.setMessage("Le modifiche verranno scartate. Sei sicuro ?");
 
-                                            setResult(0);
-                                            finish();
+                                            alert.setButton( Dialog.BUTTON_POSITIVE, "Conferma", new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    setResult(0);
+                                                    finish();
+                                                }
+                                            });
+
+                                            alert.setButton( Dialog.BUTTON_NEGATIVE, "Annulla", new DialogInterface.OnClickListener()    {
+                                                public void onClick(DialogInterface dialog, int which) {
+
+                                                }
+                                            });
+
+
+
+
+                                            alert.show();
+
                                         }
+
                                     }
         );
         final Button conferma = (Button) findViewById(R.id.CnfBtn);
         conferma.setOnClickListener(new View.OnClickListener(){
 
                                         public void onClick(View v){
+                                            AlertDialog alert = new AlertDialog.Builder(NuovoIntervento.this).create();
+                                            alert.setTitle("Conferma");
+                                            alert.setMessage("Confermando non potrai più modificare. Sei sicuro ?");
 
-                                            setResult(1);
-                                            finish();
+                                            alert.setButton( Dialog.BUTTON_POSITIVE, "Conferma", new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int which) {
+                                                            setResult(1);
+                                                            finish();
+                                                        }
+                                            });
+
+                                            alert.setButton( Dialog.BUTTON_NEGATIVE, "Annulla", new DialogInterface.OnClickListener()    {
+                                                        public void onClick(DialogInterface dialog, int which) {
+
+                                                        }
+                                            });
+
+
+
+
+                                            alert.show();
+
                                         }
                                     }
         );
         final Button congela = (Button) findViewById(R.id.CngBtn);
         congela.setOnClickListener(new View.OnClickListener(){
 
-                                        public void onClick(View v){
+                                       public void onClick(View v){
+                                           AlertDialog alert = new AlertDialog.Builder(NuovoIntervento.this).create();
+                                           alert.setTitle("Congela");
+                                           alert.setMessage("I dati verranno congelati per poter terminare l'intervento in un secondo momento.");
 
-                                           /* Intent result = new Intent();
-                                            boolean[] selected;
-                                            selected = intervento.toArray();
-                                            result.putExtra("results", selected);
-                                            setResult(2, result);*/
-                                            setResult(2);
-                                            finish();
-                                        }
+                                           alert.setButton( Dialog.BUTTON_POSITIVE, "Conferma", new DialogInterface.OnClickListener() {
+                                               public void onClick(DialogInterface dialog, int which) {
+                                                   /* Intent result = new Intent();
+                                                   boolean[] selected;
+                                                   selected = intervento.toArray();
+                                                   result.putExtra("results", selected);
+                                                   setResult(2, result);*/
+                                                   setResult(2);
+                                                   finish();
+                                               }
+                                           });
+
+                                           alert.setButton( Dialog.BUTTON_NEGATIVE, "Annulla", new DialogInterface.OnClickListener()    {
+                                               public void onClick(DialogInterface dialog, int which) {
+
+                                               }
+                                           });
+
+
+
+
+                                           alert.show();
+
+                                       }
+
                                     }
         );
+
         // Create an adapter that when requested, will return a fragment
         // representing an object in
         // the collection.
