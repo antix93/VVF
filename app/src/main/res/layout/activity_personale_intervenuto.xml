@@ -34,69 +34,69 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Antico Maurizio"
-        android:id="@+id/PerBtn1"
-        android:layout_alignParentTop="true"
+        android:id="@+id/CkbPer1"
         android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:width="200dp" />
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:textSize="22dp" />
 
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cirillo Francesco"
-        android:id="@+id/PerBtn2"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/PerBtn1"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:width="200dp" />
+        android:id="@+id/CkbPer2"
+        android:layout_below="@+id/CkbPer1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp"
+        android:checked="false"
+        android:textSize="22dp" />
 
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lomazzi Mattia"
-        android:id="@+id/PerBtn3"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/PerBtn2"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:width="200dp" />
+        android:id="@+id/CkbPer3"
+        android:layout_below="@+id/CkbPer2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp"
+        android:checked="false"
+        android:textSize="22dp" />
 
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Prina Alberto"
-        android:id="@+id/PerBtn4"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/PerBtn3"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:width="200dp" />
+        android:id="@+id/CkbPer4"
+        android:layout_below="@+id/CkbPer3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp"
+        android:checked="false"
+        android:textSize="22dp" />
 
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mollica Angelo"
-        android:id="@+id/PerBtn5"
-        android:background="@android:color/darker_gray"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:width="200dp"
-        android:layout_below="@+id/PerBtn4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:id="@+id/CkbPer5"
+        android:layout_below="@+id/CkbPer4"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp"
+        android:checked="false"
+        android:textSize="22dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guidetti Cesare"
+        android:id="@+id/CkbPer6"
+        android:layout_below="@+id/CkbPer5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp"
+        android:checked="false"
+        android:textSize="22dp" />
 
 </RelativeLayout>
