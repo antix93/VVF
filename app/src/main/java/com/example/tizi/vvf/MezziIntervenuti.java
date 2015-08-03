@@ -36,11 +36,8 @@ public class MezziIntervenuti extends Activity {
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("mezzo1", "Scala");
-                resultIntent.putExtra("km1", 23.3);
-                resultIntent.putExtra("lt1", 32);
-                setResult(1, resultIntent);
+
+                setResult(1);
                 finish();
             }
         });

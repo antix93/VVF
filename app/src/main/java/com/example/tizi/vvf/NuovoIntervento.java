@@ -23,8 +23,9 @@
     import android.widget.Button;
     import android.widget.ImageButton;
 
+    import com.example.tizi.vvf.AuxiliaryClass.Intervento;
+
     import java.io.File;
-    import java.util.Date;
 
 
     public class NuovoIntervento extends FragmentActivity {

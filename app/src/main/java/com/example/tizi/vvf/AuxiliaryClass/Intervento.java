@@ -1,4 +1,4 @@
-package com.example.tizi.vvf;
+package com.example.tizi.vvf.AuxiliaryClass;
 
 import java.util.Date;
 
@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Intervento {
 
+    //Properties
     public int numeroProgressivo;
     public boolean dataIntervento;
     public boolean motivoIntervento;
@@ -17,6 +18,7 @@ public class Intervento {
     public boolean anagrafica;
     public boolean orari;
 
+    //Constructor
     public Intervento(int numeroProgressivo) {
         this.numeroProgressivo = numeroProgressivo;
         dataIntervento = false;
@@ -28,6 +30,8 @@ public class Intervento {
         anagrafica = false;
         orari = false;
     }
+
+    //Class Methods
     public boolean[] toArray(){
         boolean[] array = new boolean[7];
         array[0] = motivoIntervento;

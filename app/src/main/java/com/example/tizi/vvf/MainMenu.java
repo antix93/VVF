@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.tizi.vvf.AuxiliaryClass.Intervento;
+
 
 public class MainMenu extends Activity {
     public Intervento[] interventi;

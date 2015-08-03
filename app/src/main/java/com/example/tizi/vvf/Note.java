@@ -20,37 +20,41 @@ public class Note extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
-
-        //Annulla
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        final EditText NoteText = (EditText) findViewById(R.id.Note);
+        final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
+        RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
+
+        String previousResult = globalVariables.getNoteIntervento();
+        if(previousResult != null){
+            NoteText.setText(previousResult);
+        }
+
+       //Annulla
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 setResult(0);
                 finish();
             }
         });
 
         //Conferma
-        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
+                globalVariables.setNoteIntervento(NoteText.getText().toString().trim());
                 setResult(1);
                 finish();
             }
         });
 
         /* Keyboard Hider on Touch */
-        RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
-        final EditText NoteText = (EditText) findViewById(R.id.Note);
         layoutRelative.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-
                 if (NoteText.isFocused()) {
                     if (event.getY() >= 72) {
                         //Will only enter this if the EditText already has focus
@@ -87,10 +91,8 @@ public class Note extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }

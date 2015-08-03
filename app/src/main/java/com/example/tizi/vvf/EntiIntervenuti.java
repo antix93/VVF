@@ -7,18 +7,36 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 
 public class EntiIntervenuti extends Activity {
-
+    protected boolean[] choice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enti_intervenuti);
-
+        choice = new boolean[6];
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        final CheckBox carabinieri = (CheckBox) findViewById(R.id.CkbCar);
+        final CheckBox polizia = (CheckBox) findViewById(R.id.CkbPol);
+        final CheckBox vigili = (CheckBox) findViewById(R.id.CkbVig);
+        final CheckBox soraka = (CheckBox) findViewById(R.id.Ckb118);
+        final CheckBox finanza = (CheckBox) findViewById(R.id.CkbGdf);
+        final CheckBox altro = (CheckBox) findViewById(R.id.checkAltro);
+        final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
 
+        boolean[] previousResult = globalVariables.getEntiIntervento();
+        if(previousResult != null) {
+            if (previousResult[0]) carabinieri.setChecked(true);
+            if (previousResult[1]) polizia.setChecked(true);
+            if (previousResult[2]) vigili.setChecked(true);
+            if (previousResult[3]) soraka.setChecked(true);
+            if (previousResult[4]) finanza.setChecked(true);
+            if (previousResult[5]) altro.setChecked(true);
+        }
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
                                          public void onClick(View v) {
@@ -28,13 +46,19 @@ public class EntiIntervenuti extends Activity {
                                          }
                                      }
         );
-        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("ente1", "carabinieri");
-                resultIntent.putExtra("ente2", "polizia");
+                if (carabinieri.isChecked()) choice[0] = true;
+                if (polizia.isChecked()) choice[1] = true;
+                if (vigili.isChecked()) choice[2] = true;
+                if (soraka.isChecked()) choice[3] = true;
+                if (finanza.isChecked()) choice[4] = true;
+                if (altro.isChecked()) choice[5] = true;
+                globalVariables.setEntiIntervento(choice);
+
                 setResult(1, resultIntent);
                 finish();
             }

@@ -11,7 +11,7 @@ import android.widget.Button;
 
 
 public class MotivoIntervento extends Activity {
-
+protected int choice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,30 @@ public class MotivoIntervento extends Activity {
         final Button SocPer = (Button) findViewById(R.id.SocBtn);
         final Button LavStra = (Button) findViewById(R.id.LavBtn);
         final Button ApePor = (Button) findViewById(R.id.ApeBtn);
+        final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
+
+        int previousSelection = globalVariables.getMotivoIntervento();
+        if (previousSelection != 0){
+            switch (previousSelection){
+                case 1:
+                    IncBtn.setBackgroundColor(Color.GREEN);
+                    break;
+                case 2:
+                    IncidBtn.setBackgroundColor(Color.GREEN);
+                    break;
+                case 3:
+                    SocPer.setBackgroundColor(Color.GREEN);
+                    break;
+                case 4:
+                    LavStra.setBackgroundColor(Color.GREEN);
+                    break;
+                case 5:
+                    ApePor.setBackgroundColor(Color.GREEN);
+                    break;
+            }
+
+
+        }
         IncBtn.setOnClickListener(new View.OnClickListener() {
 
 
@@ -30,8 +54,7 @@ public class MotivoIntervento extends Activity {
 
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncBtn.setBackgroundColor(Color.GREEN);
-
-
+                    choice = 1;
             }
         });
 
@@ -44,7 +67,7 @@ public class MotivoIntervento extends Activity {
 
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncidBtn.setBackgroundColor(Color.GREEN);
-
+                    choice = 2;
 
             }
         });
@@ -58,7 +81,7 @@ public class MotivoIntervento extends Activity {
 
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     SocPer.setBackgroundColor(Color.GREEN);
-
+                    choice = 3;
             }
         });
 
@@ -70,7 +93,7 @@ public class MotivoIntervento extends Activity {
 
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     LavStra.setBackgroundColor(Color.GREEN);
-
+                    choice = 4;
             }
         });
 
@@ -83,6 +106,7 @@ public class MotivoIntervento extends Activity {
 
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     ApePor.setBackgroundColor(Color.GREEN);
+                    choice = 5;
 
             }
         });
@@ -102,6 +126,8 @@ public class MotivoIntervento extends Activity {
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                if(choice != 0)
+                globalVariables.setMotivoIntervento(choice);
                 setResult(1);
                 finish();
             }

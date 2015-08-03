@@ -13,16 +13,35 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.example.tizi.vvf.AuxiliaryClass.Anagrafica;
+
 
 public class DettaglioAnagrafica extends Activity {
-
+    protected Anagrafica data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dettaglio_anagrafica);
-
-        //Annulla
+        final EditText RicText = (EditText) findViewById(R.id.TxtRic);
+        final EditText ProText = (EditText) findViewById(R.id.TxtPro);
+        final EditText AffText = (EditText) findViewById(R.id.TxtAff);
+        final EditText AltText = (EditText) findViewById(R.id.TxtAlt);
         final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+        RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
+        final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
+        final Anagrafica previousResult = globalVariables.getAnagraficaIntervento();
+
+        if(previousResult != null) {
+                RicText.setText(previousResult.getRichiedente());
+                ProText.setText(previousResult.getProprietario());
+                AffText.setText(previousResult.getAffittuario());
+                AltText.setText(previousResult.getAltro());
+
+        }
+        //Annulla
+
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -33,25 +52,19 @@ public class DettaglioAnagrafica extends Activity {
         });
 
         //Conferma
-        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
+
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("richiedente", "Rossi Sergio");
-                resultIntent.putExtra("proprietario", "Verdi Franco");
-                resultIntent.putExtra("affittuario", "");
-                setResult(1, resultIntent);
+                data = new Anagrafica( RicText.getText().toString(), ProText.getText().toString(), AffText.getText().toString(), AltText.getText().toString());
+                globalVariables.setAnagraficaIntervento(data);
+                setResult(1);
                 finish();
             }
         });
 
+
         /* Keyboard Hider on Touch */
-        RelativeLayout layoutRelative = (RelativeLayout) findViewById(R.id.layoutRelative);
-        final EditText RicText = (EditText) findViewById(R.id.TxtRic);
-        final EditText ProText = (EditText) findViewById(R.id.TxtPro);
-        final EditText AffText = (EditText) findViewById(R.id.TxtAff);
-        final EditText AltText = (EditText) findViewById(R.id.TxtAlt);
         layoutRelative.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
