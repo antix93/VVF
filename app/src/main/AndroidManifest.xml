@@ -72,7 +72,7 @@
             android:label="@string/title_activity_personale_intervenuto" >
         </activity>
         <activity
-            android:name=".orari"
+            android:name=".OrariIntevento"
             android:label="@string/title_activity_orari" >
         </activity>
         <activity

@@ -9,14 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MotivoIntervento extends Activity {
 protected int choice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivo_intervento);
-
         //Bottone Personale 1
         final Button IncBtn = (Button) findViewById(R.id.IncendioBtn);
         final Button IncidBtn = (Button) findViewById(R.id.IncBtb);

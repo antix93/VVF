@@ -1,6 +1,6 @@
 package com.example.tizi.vvf;
-import android.app.Application;
 
+import android.app.Application;
 import com.example.tizi.vvf.AuxiliaryClass.Anagrafica;
 import com.example.tizi.vvf.AuxiliaryClass.Orario;
 
@@ -18,6 +18,7 @@ public class InterActivityData extends Application {
     private String noteIntervento;
     private Anagrafica anagraficaIntervento;
     private Orario orariIntervento;
+    private boolean frozen;
 
     //Getters and Setters
     public int getMotivoIntervento() {
@@ -68,7 +69,44 @@ public class InterActivityData extends Application {
         this.anagraficaIntervento = anagraficaIntervento;
     }
 
+    public Orario getOrariIntervento() {
+        return orariIntervento;
+    }
 
+    public void setOrariIntervento(Orario orariIntervento) {
+        this.orariIntervento = orariIntervento;
+    }
 
+    public boolean isFrozen() {
+        return frozen;
+    }
+
+    public void setFrozen(boolean frozen) {
+        this.frozen = frozen;
+    }
+
+    public boolean[] getSelectedArray(){
+        boolean[]selected = new boolean[7];
+        if(this.motivoIntervento != 0)selected[0]=true;
+        if(this.personaleIntervento != null)selected[1]=true;
+        if(this.entiIntervento != null)selected[2]=true;
+        if(this.mezziIntervento != null)selected[3]=true;
+        if(this.orariIntervento != null)selected[4]=true;
+        if(this.anagraficaIntervento != null)selected[5]=true;
+        if(this.noteIntervento != "")selected[6]=true;
+        return selected;
+    }
+
+    //methods
+    public void resetValues(){
+        motivoIntervento = 0;
+        mezziIntervento = null;
+        personaleIntervento = null;
+        entiIntervento = null;
+        noteIntervento = "";
+        anagraficaIntervento = null;
+        orariIntervento = null;
+        frozen = false;
+    }
 }
 

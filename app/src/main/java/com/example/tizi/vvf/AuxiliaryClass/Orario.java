@@ -5,14 +5,14 @@ public class Orario{
     //Properties
     private String orarioUscita;
     private String orarioArrivo;
-    private String orarioChiamata;
+    private String orarioPartienza;
     private String orarioRientro;
 
     //Constructor
     public Orario(String orarioUscita, String orarioArrivo, String orarioChiamata, String orarioRientro) {
         this.orarioUscita = orarioUscita;
         this.orarioArrivo = orarioArrivo;
-        this.orarioChiamata = orarioChiamata;
+        this.orarioPartienza = orarioChiamata;
         this.orarioRientro = orarioRientro;
     }
 
@@ -34,12 +34,12 @@ public class Orario{
         this.orarioArrivo = orarioArrivo;
     }
 
-    public String getOrarioChiamata() {
-        return orarioChiamata;
+    public String getOrarioPartienza() {
+        return orarioPartienza;
     }
 
-    public void setOrarioChiamata(String orarioChiamata) {
-        this.orarioChiamata = orarioChiamata;
+    public void setOrarioPartienza(String orarioPartienza) {
+        this.orarioPartienza = orarioPartienza;
     }
 
     public String getOrarioRientro() {
