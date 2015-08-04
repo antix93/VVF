@@ -84,14 +84,11 @@ public class PersonaleIntervenuto extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

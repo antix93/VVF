@@ -5,6 +5,7 @@ import java.util.Date;
 /**
  * Created by maffo on 15/05/15.
  */
+
 public class Intervento {
 
     //Properties

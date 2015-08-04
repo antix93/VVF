@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 public class Tab2 extends Activity {
 
     @Override
@@ -14,7 +13,6 @@ public class Tab2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab2);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,14 +27,11 @@ public class Tab2 extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

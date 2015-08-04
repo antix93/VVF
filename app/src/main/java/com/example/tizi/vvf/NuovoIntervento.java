@@ -109,7 +109,6 @@
                                                alert.show();
                                            }
             });
-
             // Create an adapter that when requested, will return a fragment
             // representing an object in
             // the collection
@@ -127,7 +126,6 @@
             // Set up the ViewPager, attaching the adapter.
             mViewPager = (ViewPager) findViewById(R.id.pager);
             mViewPager.setAdapter(mCollectionPagerAdapter);
-
         }
 
         @Override
@@ -172,7 +170,6 @@
                 args.putInt(TabFragment.ARG_OBJECT, i);
                 fragment.setArguments(args);
                 return fragment;
-
             }
 
             @Override
@@ -208,7 +205,6 @@
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                      Bundle savedInstanceState) {
-
                 Bundle args = getArguments();
                 int position = args.getInt(ARG_OBJECT);
                 boolean[] previousResult = globalVariables.getSelectedArray();
@@ -328,7 +324,6 @@
                                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(destination));
                                 startActivityForResult(intent, 8);
-
                             }
                         });
 

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-
 public class EntiIntervenuti extends Activity {
     protected boolean[] choice;
     @Override
@@ -37,8 +36,8 @@ public class EntiIntervenuti extends Activity {
             if (previousResult[4]) finanza.setChecked(true);
             if (previousResult[5]) altro.setChecked(true);
         }
-        AnnButton.setOnClickListener(new View.OnClickListener() {
 
+        AnnButton.setOnClickListener(new View.OnClickListener() {
                                          public void onClick(View v) {
 
                                              setResult(0);
@@ -58,13 +57,11 @@ public class EntiIntervenuti extends Activity {
                 if (finanza.isChecked()) choice[4] = true;
                 if (altro.isChecked()) choice[5] = true;
                 globalVariables.setEntiIntervento(choice);
-
                 setResult(1, resultIntent);
                 finish();
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,14 +81,11 @@ public class EntiIntervenuti extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

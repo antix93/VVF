@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
 public class ArchivioIntervento extends Activity {
 
     @Override
@@ -36,10 +35,8 @@ public class ArchivioIntervento extends Activity {
         annulla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 setResult(0);
                 finish();
-
             }
 
             });
@@ -53,12 +50,10 @@ public class ArchivioIntervento extends Activity {
         for (int i = 0; i < values.length; ++i) {
             list.add(values[i]);
         }
-        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
+        final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
-/*
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+/*          listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,  View v,
                                     int position, long id) {
@@ -68,17 +63,13 @@ public class ArchivioIntervento extends Activity {
             }
 
         });*/
-
-
     };
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_archivio_intervento, menu);
         return true;
-
     }
 
     public boolean onPrepareOptionsMenu(Menu menu){
@@ -92,17 +83,13 @@ public class ArchivioIntervento extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 }
 
 class StableArrayAdapter extends ArrayAdapter<String> {

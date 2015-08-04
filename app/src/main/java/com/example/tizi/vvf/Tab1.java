@@ -37,7 +37,6 @@ public class Tab1 extends Activity {
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

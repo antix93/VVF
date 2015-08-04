@@ -20,20 +20,19 @@ public class Mappa extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mappa);
         setUpMapIfNeeded();
+        final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
 
         //Annulla
-        final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 setResult(0);
                 finish();
             }
         });
 
         //Conferma
-        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -86,7 +85,6 @@ public class Mappa extends FragmentActivity {
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(45.927218, 8.559607)).title("VVF - Comando"));
         mMap.animateCamera(CameraUpdateFactory.zoomIn());
-
         //Zoom in and animate the camera.
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.927218, 8.559607),18));
     }

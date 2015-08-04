@@ -62,7 +62,6 @@ public class Note extends Activity {
                         //Which in my case is at the top of my layout
                         //and 72 pixels long
                         NoteText.clearFocus();
-
                         InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     }
@@ -71,7 +70,6 @@ public class Note extends Activity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,7 +94,6 @@ public class Note extends Activity {
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

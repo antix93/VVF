@@ -22,6 +22,8 @@ protected int choice;
         final Button LavStra = (Button) findViewById(R.id.LavBtn);
         final Button ApePor = (Button) findViewById(R.id.ApeBtn);
         final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
+        final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
+        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
 
         int previousSelection = globalVariables.getMotivoIntervento();
         if (previousSelection != 0){
@@ -42,14 +44,11 @@ protected int choice;
                     ApePor.setBackgroundColor(Color.GREEN);
                     break;
             }
-
-
         }
         IncBtn.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
-
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncBtn.setBackgroundColor(Color.GREEN);
                     choice = 1;
@@ -57,16 +56,13 @@ protected int choice;
         });
 
         //Bottone Personale 2
-
         IncidBtn.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
-
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     IncidBtn.setBackgroundColor(Color.GREEN);
                     choice = 2;
-
             }
         });
 
@@ -76,7 +72,6 @@ protected int choice;
 
 
             public void onClick(View v) {
-
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     SocPer.setBackgroundColor(Color.GREEN);
                     choice = 3;
@@ -84,11 +79,9 @@ protected int choice;
         });
 
         //Bottone Personale 4
-
         LavStra.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     LavStra.setBackgroundColor(Color.GREEN);
                     choice = 4;
@@ -96,31 +89,26 @@ protected int choice;
         });
 
         //Bottone Personale 5
-
         ApePor.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
-
                     resetButton(IncBtn, IncidBtn, SocPer, LavStra, ApePor);
                     ApePor.setBackgroundColor(Color.GREEN);
                     choice = 5;
-
             }
         });
 
         //Annulla
-        final Button AnnButton = (Button) findViewById(R.id.AnnBtn);
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 setResult(0);
                 finish();
             }
         });
+
         //Conferma
-        final Button ConButton = (Button) findViewById(R.id.ConfBtn);
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -130,7 +118,6 @@ protected int choice;
                 finish();
             }
         });
-
     }
 
     private void resetButton(Button incBtn, Button incidBtn, Button socPer, Button lavStra, Button apePor) {
@@ -140,7 +127,6 @@ protected int choice;
         lavStra.setBackgroundColor(Color.GRAY);
         apePor.setBackgroundColor(Color.GRAY);
     }
-
 
     public boolean onPrepareOptionsMenu(Menu menu){
         menu.getItem(0).setEnabled(false);
@@ -160,14 +146,11 @@ protected int choice;
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

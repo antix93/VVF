@@ -16,7 +16,6 @@ public class Orario{
         this.orarioRientro = orarioRientro;
     }
 
-
     //Getters and Setters
     public String getOrarioUscita() {
         return orarioUscita;
@@ -49,6 +48,4 @@ public class Orario{
     public void setOrarioRientro(String orarioRientro) {
         this.orarioRientro = orarioRientro;
     }
-
-
 }

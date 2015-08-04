@@ -15,9 +15,9 @@ import android.widget.RelativeLayout;
 
 import com.example.tizi.vvf.AuxiliaryClass.Anagrafica;
 
-
 public class DettaglioAnagrafica extends Activity {
     protected Anagrafica data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,21 +38,18 @@ public class DettaglioAnagrafica extends Activity {
                 ProText.setText(previousResult.getProprietario());
                 AffText.setText(previousResult.getAffittuario());
                 AltText.setText(previousResult.getAltro());
-
         }
-        //Annulla
 
+        //Annulla
         AnnButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 setResult(0);
                 finish();
             }
         });
 
         //Conferma
-
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -63,13 +60,10 @@ public class DettaglioAnagrafica extends Activity {
             }
         });
 
-
         /* Keyboard Hider on Touch */
         layoutRelative.setOnTouchListener(new View.OnTouchListener() {
-
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-
                 if (RicText.isFocused() || ProText.isFocused() || AffText.isFocused() || AltText.isFocused()) {
                     if (event.getY() >= 72) {
                         //Will only enter this if the EditText already has focus
@@ -89,7 +83,6 @@ public class DettaglioAnagrafica extends Activity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -108,14 +101,11 @@ public class DettaglioAnagrafica extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.IcoNome) {
-
             Intent intent = new Intent(this, DettUtente.class);
             startActivityForResult(intent, 0);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
