@@ -93,7 +93,7 @@ public class InterActivityData extends Application {
         if(this.mezziIntervento != null)selected[3]=true;
         if(this.orariIntervento != null)selected[4]=true;
         if(this.anagraficaIntervento != null)selected[5]=true;
-        if(this.noteIntervento != "")selected[6]=true;
+        if(this.noteIntervento != null && !this.noteIntervento.isEmpty())selected[6]=true;
         return selected;
     }
 

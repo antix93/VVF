@@ -53,12 +53,12 @@ public class ArchivioIntervento extends Activity {
         final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
-/*          listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
+       /* listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
             public void onItemClick(AdapterView<?> parent,  View v,
                                     int position, long id) {
 
-                Intent intent = new Intent(v.getContext(), DettaglioIntervento.class);
+                Intent intent = new Intent(v.getContext(), DettaglioArchivio.class);
                 startActivity(intent);
             }
 
