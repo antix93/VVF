@@ -30,7 +30,7 @@ public class ArchivioIntervento extends Activity {
         View item = (View) elem1;
         list.add(0, item);
         listaElementi.addTouchables(list);
-        */
+
         Button annulla = (Button) findViewById(R.id.AnnullaArchivio);
         annulla.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class ArchivioIntervento extends Activity {
         final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
-       /* listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
           @Override
             public void onItemClick(AdapterView<?> parent,  View v,
                                     int position, long id) {
@@ -63,6 +63,33 @@ public class ArchivioIntervento extends Activity {
             }
 
         });*/
+        String[] values = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
+                "Incendio 27/02/2015", "Incendio 27/01/2015", "Incendio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010",
+                "Incendio 20/02/2010"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, values);
+        ListView listview = (ListView) findViewById(R.id.listViewArchivio);
+        listview.setAdapter(adapter);
+
+         AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                // Do something in response to the click
+                Intent intent = new Intent(v.getContext(), DettaglioArchivio.class);
+                startActivity(intent);
+            }
+        };
+
+        listview.setOnItemClickListener(mMessageClickedHandler);
+
+        Button annulla2 = (Button) findViewById(R.id.AnnullaArchivio);
+        annulla2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(0);
+                finish();
+            }
+
+        });
     };
 
     @Override
