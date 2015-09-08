@@ -50,6 +50,7 @@ public class MainMenu extends Activity {
 
         ArcBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                globalVariables.setMotivoRicerca(0);
                 Intent intent = new Intent(v.getContext(), ArchivioIntervento.class);
                 startActivityForResult(intent, 2);
             }

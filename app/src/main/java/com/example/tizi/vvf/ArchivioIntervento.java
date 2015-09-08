@@ -22,52 +22,24 @@ public class ArchivioIntervento extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archivio_intervento);
-        /* list loading
-        ListView listaElementi = (ListView) findViewById(R.id.ListViewArchivio);
-        TextView elem1 = new TextView(getBaseContext());
-        elem1.setText("Elemento 1");
-        ArrayList<View> list = new ArrayList<View>();
-        View item = (View) elem1;
-        list.add(0, item);
-        listaElementi.addTouchables(list);
-
-        Button annulla = (Button) findViewById(R.id.AnnullaArchivio);
-        annulla.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(0);
-                finish();
-            }
-
-            });
-
-        final ListView listview = (ListView) findViewById(R.id.listViewArchivio);
-        String[] values = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
-                "Incendio 27/02/2015", "Apertura Porta 27/01/2015", "Salvataggio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010",
-                "Apertura Porta 20/02/2010"};
-
-        final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
-        final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
-        listview.setAdapter(adapter);
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
-            public void onItemClick(AdapterView<?> parent,  View v,
-                                    int position, long id) {
-
-                Intent intent = new Intent(v.getContext(), DettaglioArchivio.class);
-                startActivity(intent);
-            }
-
-        });*/
-        String[] values = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
+        final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
+        String[] valuesDefault = new String[] { "Incendio 27/02/2015", "Apertura Porta 25/02/2015", "Incendio 21/02/2015",
+                "Incendio 27/02/2015", "Incidente 27/01/2015", "Salvataggio 27/02/2013", "Incidente 27/02/2012", "Incendio 27/02/2011", "Incidente 27/02/2010",
+                "Incendio 20/02/2010"};
+        String[] valuesIncendio = new String[] { "Incendio 27/02/2015", "Incendio 25/02/2015", "Incendio 21/02/2015",
                 "Incendio 27/02/2015", "Incendio 27/01/2015", "Incendio 27/02/2013", "Incendio 27/02/2012", "Incendio 27/02/2011", "Incendio 27/02/2010",
                 "Incendio 20/02/2010"};
+        String[] valuesApertura = new String[] { "Apertura 27/02/2015", "Apertura 25/02/2015", "Apertura 21/02/2015", "Apertura 27/02/2015", "Apertura 27/01/2015", "Apertura 27/02/2013", "Apertura 27/02/2012", "Apertura 27/02/2011", "Apertura 27/02/2010",
+                "Apertura 20/02/2010"};
+        String[] valuesIncidente = new String[] { "Incidente 27/02/2015", "Incidente 25/02/2015", "Incidente 21/02/2015","Incidente 27/02/2015", "Incidente 27/01/2015", "Incidente 27/02/2013", "Incidente 27/02/2012", "Incidente 27/02/2011", "Incidente 27/02/2010",
+                "Incidente 20/02/2010"};
+        String[] valuesSalvataggio = new String[] { "Salvataggio 27/02/2015", "Salvataggio 25/02/2015", "Salvataggio 21/02/2015",
+                "Salvataggio 27/02/2015", "Salvataggio 27/01/2015", "Salvataggio 27/02/2013", "Salvataggio 27/02/2012", "Salvataggio 27/02/2011", "Salvataggio 27/02/2010",
+                "Salvataggio 20/02/2010"};
+        String[][] values = {valuesDefault, valuesIncendio, valuesApertura, valuesIncidente, valuesSalvataggio};
+        int reasonIndex = globalVariables.getMotivoRicerca();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, values);
+                android.R.layout.simple_list_item_1, values[reasonIndex]);
         ListView listview = (ListView) findViewById(R.id.listViewArchivio);
         listview.setAdapter(adapter);
 

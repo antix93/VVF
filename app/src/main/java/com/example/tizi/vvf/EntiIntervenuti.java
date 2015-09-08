@@ -1,6 +1,9 @@
 package com.example.tizi.vvf;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class EntiIntervenuti extends Activity {
@@ -25,17 +29,23 @@ public class EntiIntervenuti extends Activity {
         final CheckBox soraka = (CheckBox) findViewById(R.id.Ckb118);
         final CheckBox finanza = (CheckBox) findViewById(R.id.CkbGdf);
         final CheckBox altro = (CheckBox) findViewById(R.id.checkAltro);
+        final EditText altroText = (EditText) findViewById(R.id.altroText);
         final InterActivityData globalVariables = (InterActivityData) getApplicationContext();
 
         boolean[] previousResult = globalVariables.getEntiIntervento();
+        String previousAltro = globalVariables.getEntiAltro();
         if(previousResult != null) {
             if (previousResult[0]) carabinieri.setChecked(true);
             if (previousResult[1]) polizia.setChecked(true);
             if (previousResult[2]) vigili.setChecked(true);
             if (previousResult[3]) soraka.setChecked(true);
             if (previousResult[4]) finanza.setChecked(true);
-            if (previousResult[5]) altro.setChecked(true);
+            if (previousResult[5]){
+                altro.setChecked(true);
+                altroText.setText(previousAltro);
+            };
         }
+
 
         AnnButton.setOnClickListener(new View.OnClickListener() {
                                          public void onClick(View v) {
@@ -55,10 +65,27 @@ public class EntiIntervenuti extends Activity {
                 if (vigili.isChecked()) choice[2] = true;
                 if (soraka.isChecked()) choice[3] = true;
                 if (finanza.isChecked()) choice[4] = true;
-                if (altro.isChecked()) choice[5] = true;
-                globalVariables.setEntiIntervento(choice);
-                setResult(1, resultIntent);
-                finish();
+                if (altro.isChecked() && !altroText.getText().toString().equals("")) {
+                    choice[5] = true;
+                    globalVariables.setEntiAltro(altroText.getText().toString());
+                }
+                if(altro.isChecked() && (altroText.getText().toString().equals("")||altroText.getText().toString().equals("Altro"))){
+                    //error
+                    AlertDialog alert = new AlertDialog.Builder(EntiIntervenuti.this).create();
+                    alert.setTitle("Impossibile Confermare");
+                    alert.setMessage("Compilare il campo \"Altro\"");
+
+                    alert.setButton(Dialog.BUTTON_POSITIVE, "Annulla", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    alert.show();
+                }else {
+                    globalVariables.setEntiIntervento(choice);
+                    setResult(1, resultIntent);
+                    finish();
+                }
             }
         });
     }

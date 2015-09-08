@@ -124,34 +124,36 @@ public class OrariIntevento extends FragmentActivity {
         minute = calendar.get(Calendar.MINUTE);
         switch (id){
             case dialog_id:
-               return new TimePickerDialog(this, mTimeSetListener, hour, minute, false );
+               return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+                   @Override
+                   public void onTimeSet(TimePicker view, int hourOfDay, int hour_minute) {
+                       hour =  hourOfDay;
+                       minute = hour_minute;
+                       if(minute < 10){
+                           EdText.setText(hour + ":0" + minute);
+                       }else {
+                           EdText.setText(hour + ":" + minute);
+                       }
+                   }
+               }, hour, minute, false );
         }
         return null;
     }
 
-    protected  TimePickerDialog.OnTimeSetListener mTimeSetListener;{
+   /* protected  TimePickerDialog.OnTimeSetListener mTimeSetListener;
+    {
         mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int hour_minute) {
                 hour =  hourOfDay;
                 minute = hour_minute;
-                Toast.makeText(getBaseContext(), "Ora: " + hour + " minuti: " + minute, Toast.LENGTH_LONG).show();
-                EdText.setText(hour + ":" + minute);
+                if(minute < 10){
+                    EdText.setText(hour + ":0" + minute);
+                }else {
+                    EdText.setText(hour + ":" + minute);
+                }
             }
         };
-    }
-
-    /*
-    public void showDialog(View view){
-        DialogHandler dialogHandler = new DialogHandler();
-        dialogHandler.show(getFragmentManager(),"time_picker");
-
-        //Ora senza keyboard
-
-        EditText yourEditText= (EditText) findViewById(R.id.TxtUsc);
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(yourEditText, InputMethodManager.SHOW_IMPLICIT);
-        imm.hideSoftInputFromWindow(yourEditText.getWindowToken(), 0);
     }*/
 
     public boolean onPrepareOptionsMenu(Menu menu){

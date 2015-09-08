@@ -11,17 +11,29 @@ import com.example.tizi.vvf.AuxiliaryClass.Orario;
 
 public class InterActivityData extends Application {
 
+
+
     //Properties
     private int motivoIntervento;
+    private int motivoRicerca;
     private Mezzo[] mezziIntervento;
     private boolean[] personaleIntervento;
     private boolean[] entiIntervento;
+    private String entiAltro;
     private String noteIntervento;
     private Anagrafica anagraficaIntervento;
     private Orario orariIntervento;
     private boolean frozen;
 
     //Getters and Setters
+    public int getMotivoRicerca() {
+        return motivoRicerca;
+    }
+
+    public void setMotivoRicerca(int motivoRicerca) {
+        this.motivoRicerca = motivoRicerca;
+    }
+
     public int getMotivoIntervento() {
         return motivoIntervento;
     }
@@ -52,6 +64,14 @@ public class InterActivityData extends Application {
 
     public void setEntiIntervento(boolean[] entiIntervento) {
         this.entiIntervento = entiIntervento;
+    }
+
+    public String getEntiAltro() {
+        return entiAltro;
+    }
+
+    public void setEntiAltro(String entiAltro) {
+        this.entiAltro = entiAltro;
     }
 
     public String getNoteIntervento() {
