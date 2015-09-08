@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.tizi.vvf.MezziIntervenuti">
+    tools:context="com.example.tizi.vvf.MezziIntervenuti"
+    android:id="@+id/layoutRelative">
 
     <View
         android:layout_width="fill_parent"
@@ -38,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A.P.S"
-        android:id="@+id/CkbAps"
+        android:id="@+id/Ckb0"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:checked="false"
@@ -49,8 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Autoscala"
-        android:id="@+id/CkbAutoscala"
-        android:layout_below="@+id/CkbAps"
+        android:id="@+id/Ckb1"
+        android:layout_below="@+id/Ckb0"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
         android:checked="false"
@@ -60,45 +61,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Autobotte"
-        android:id="@+id/CkbAutoBotte"
-        android:layout_below="@+id/CkbAutoscala"
+        android:id="@+id/Ckb2"
+        android:layout_below="@+id/Ckb1"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
         android:checked="false"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:clickable="true"
+        android:enabled="true"
+        android:focusable="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gru"
-        android:id="@+id/CkbGru"
-        android:layout_below="@+id/CkbAutoBotte"
+        android:id="@+id/Ckb3"
+        android:layout_below="@+id/Ckb2"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
         android:checked="false"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:clickable="true"
+        android:enabled="true"
+        android:focusable="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Barca"
-        android:id="@+id/CkbBarca"
-        android:layout_below="@+id/CkbGru"
+        android:id="@+id/Ckb4"
+        android:layout_below="@+id/Ckb3"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
         android:checked="false"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:clickable="true"
+        android:enabled="true"
+        android:focusable="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Anfibio"
-        android:id="@+id/CkbAnfibio"
-        android:layout_below="@+id/CkbBarca"
+        android:id="@+id/Ckb5"
+        android:layout_below="@+id/Ckb4"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
         android:checked="false"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:clickable="true"
+        android:enabled="true"
+        android:focusable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,7 +120,7 @@
         android:text="Km"
         android:id="@+id/textView13"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbAps"
+        android:layout_alignTop="@+id/Ckb0"
         android:layout_toEndOf="@+id/AnnBtn" />
 
     <EditText
@@ -115,13 +128,15 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/km0"
         android:layout_toEndOf="@+id/textView13"
         android:width="60dp"
-        android:layout_above="@+id/CkbAutoscala"
+        android:layout_above="@+id/Ckb1"
         android:layout_alignTop="@+id/textView12"
         android:paddingBottom="5dp"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -131,20 +146,22 @@
         android:id="@+id/textView12"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView13"
-        android:layout_toStartOf="@+id/editText3" />
+        android:layout_toStartOf="@+id/lt0" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/lt0"
         android:width="60dp"
-        android:layout_alignBottom="@+id/editText"
+        android:layout_alignBottom="@+id/km0"
         android:layout_alignEnd="@+id/ConfBtn"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView12"
-        android:paddingBottom="5dp" />
+        android:paddingBottom="5dp"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -153,20 +170,23 @@
         android:text="Km"
         android:id="@+id/textView14"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbAutoscala"
-        android:layout_alignStart="@+id/textView13" />
+        android:layout_alignTop="@+id/Ckb1"
+        android:layout_alignStart="@+id/textView13"
+        />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/km1"
         android:width="60dp"
         android:paddingBottom="5dp"
         android:textSize="22dp"
-        android:layout_above="@+id/CkbAutoBotte"
-        android:layout_toEndOf="@+id/textView14" />
+        android:layout_above="@+id/Ckb2"
+        android:layout_toEndOf="@+id/textView14"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -183,12 +203,14 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/lt1"
         android:width="60dp"
         android:textSize="22dp"
         android:paddingBottom="5dp"
-        android:layout_alignTop="@+id/editText4"
-        android:layout_toEndOf="@+id/textView15" />
+        android:layout_alignTop="@+id/km1"
+        android:layout_toEndOf="@+id/textView15"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -197,20 +219,23 @@
         android:text="Km"
         android:id="@+id/textView16"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbAutoBotte"
-        android:layout_alignStart="@+id/textView14" />
+        android:layout_alignTop="@+id/Ckb2"
+        android:layout_alignStart="@+id/textView14"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/km2"
         android:width="60dp"
         android:paddingBottom="5dp"
         android:textSize="22dp"
-        android:layout_alignBottom="@+id/CkbAutoBotte"
-        android:layout_alignStart="@+id/editText4" />
+        android:layout_alignBottom="@+id/Ckb2"
+        android:layout_alignStart="@+id/km1"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -220,19 +245,22 @@
         android:id="@+id/textView17"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView16"
-        android:layout_alignStart="@+id/textView15" />
+        android:layout_alignStart="@+id/textView15"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText7"
+        android:id="@+id/lt2"
         android:width="60dp"
         android:textSize="22dp"
         android:paddingBottom="5dp"
-        android:layout_above="@+id/CkbGru"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/Ckb3"
+        android:layout_alignParentEnd="true"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -241,20 +269,23 @@
         android:text="Km"
         android:id="@+id/textView18"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbGru"
-        android:layout_alignStart="@+id/textView16" />
+        android:layout_alignTop="@+id/Ckb3"
+        android:layout_alignStart="@+id/textView16"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/km3"
         android:width="60dp"
         android:paddingBottom="5dp"
         android:textSize="22dp"
-        android:layout_above="@+id/CkbBarca"
-        android:layout_toEndOf="@+id/textView18" />
+        android:layout_above="@+id/Ckb4"
+        android:layout_toEndOf="@+id/textView18"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -264,20 +295,23 @@
         android:id="@+id/textView19"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView18"
-        android:layout_toEndOf="@+id/editText8"
-        android:layout_alignStart="@+id/textView17" />
+        android:layout_toEndOf="@+id/km3"
+        android:layout_alignStart="@+id/textView17"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText9"
+        android:id="@+id/lt3"
         android:width="60dp"
         android:textSize="22dp"
         android:paddingBottom="5dp"
-        android:layout_above="@+id/CkbBarca"
-        android:layout_toEndOf="@+id/textView19" />
+        android:layout_above="@+id/Ckb4"
+        android:layout_toEndOf="@+id/textView19"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -286,21 +320,24 @@
         android:text="Km"
         android:id="@+id/textView20"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbBarca"
-        android:layout_alignStart="@+id/textView18" />
+        android:layout_alignTop="@+id/Ckb4"
+        android:layout_alignStart="@+id/textView18"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText10"
+        android:id="@+id/km4"
         android:width="60dp"
         android:paddingBottom="5dp"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView20"
-        android:layout_above="@+id/CkbAnfibio"
-        android:layout_toEndOf="@+id/textView20" />
+        android:layout_above="@+id/Ckb5"
+        android:layout_toEndOf="@+id/textView20"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -310,19 +347,22 @@
         android:id="@+id/textView21"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView20"
-        android:layout_alignStart="@+id/textView19" />
+        android:layout_alignStart="@+id/textView19"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText11"
+        android:id="@+id/lt4"
         android:width="60dp"
         android:textSize="22dp"
         android:paddingBottom="5dp"
-        android:layout_alignBottom="@+id/editText10"
-        android:layout_alignStart="@+id/editText9" />
+        android:layout_alignBottom="@+id/km4"
+        android:layout_alignStart="@+id/lt3"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -331,20 +371,23 @@
         android:text="Km"
         android:id="@+id/textView22"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/CkbAnfibio"
-        android:layout_alignStart="@+id/textView20" />
+        android:layout_alignTop="@+id/Ckb5"
+        android:layout_alignStart="@+id/textView20"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText12"
+        android:id="@+id/km5"
         android:width="60dp"
         android:paddingBottom="5dp"
         android:textSize="22dp"
-        android:layout_alignTop="@+id/editText13"
-        android:layout_toEndOf="@+id/textView22" />
+        android:layout_alignTop="@+id/lt5"
+        android:layout_toEndOf="@+id/textView22"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -354,18 +397,21 @@
         android:id="@+id/textView23"
         android:textSize="22dp"
         android:layout_alignTop="@+id/textView22"
-        android:layout_toStartOf="@+id/editText13" />
+        android:layout_toStartOf="@+id/lt5"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText13"
+        android:id="@+id/lt5"
         android:width="60dp"
         android:textSize="22dp"
         android:paddingBottom="5dp"
-        android:layout_alignBottom="@+id/CkbAnfibio"
-        android:layout_alignStart="@+id/editText11" />
+        android:layout_alignBottom="@+id/Ckb5"
+        android:layout_alignStart="@+id/lt4"
+        android:enabled="false"
+        android:imeOptions="actionDone"/>
 
 </RelativeLayout>

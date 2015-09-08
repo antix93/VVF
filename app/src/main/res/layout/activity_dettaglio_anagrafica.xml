@@ -56,7 +56,8 @@
         android:textSize="22dp"
         android:layout_below="@+id/textView28"
         android:layout_alignStart="@+id/TxtPro"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,7 +80,8 @@
         android:paddingBottom="5dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,7 +104,8 @@
         android:paddingBottom="5dp"
         android:layout_alignStart="@+id/TxtPro"
         android:layout_marginTop="10dp"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:imeOptions="actionDone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -125,5 +128,6 @@
         android:layout_marginTop="10dp"
         android:paddingBottom="5dp"
         android:layout_centerHorizontal="true"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:imeOptions="actionDone"/>
 </RelativeLayout>

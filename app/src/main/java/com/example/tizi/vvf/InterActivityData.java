@@ -2,6 +2,7 @@ package com.example.tizi.vvf;
 
 import android.app.Application;
 import com.example.tizi.vvf.AuxiliaryClass.Anagrafica;
+import com.example.tizi.vvf.AuxiliaryClass.Mezzo;
 import com.example.tizi.vvf.AuxiliaryClass.Orario;
 
 /**
@@ -12,7 +13,7 @@ public class InterActivityData extends Application {
 
     //Properties
     private int motivoIntervento;
-    private boolean[] mezziIntervento;
+    private Mezzo[] mezziIntervento;
     private boolean[] personaleIntervento;
     private boolean[] entiIntervento;
     private String noteIntervento;
@@ -29,11 +30,11 @@ public class InterActivityData extends Application {
         this.motivoIntervento = motivoIntervento;
     }
 
-    public boolean[] getMezziIntervento() {
+    public Mezzo[] getMezziIntervento() {
         return mezziIntervento;
     }
 
-    public void setMezziIntervento(boolean[] mezziIntervento) {
+    public void setMezziIntervento(Mezzo[] mezziIntervento) {
         this.mezziIntervento = mezziIntervento;
     }
 
