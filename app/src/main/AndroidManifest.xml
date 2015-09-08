@@ -18,7 +18,9 @@
         android:allowBackup="true"
         android:icon="@drawable/firefighter1"
         android:label="@string/NomApp"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
+
         <!--android:theme="@style/AppTheme" >
         android:theme="@style/CustomActionBarTheme">-->
 

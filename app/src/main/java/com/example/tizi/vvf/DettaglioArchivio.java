@@ -1,16 +1,28 @@
 package com.example.tizi.vvf;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class DettaglioArchivio extends ActionBarActivity {
+public class DettaglioArchivio extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dettaglio_archivio);
+        Button annulla = (Button) findViewById(R.id.annullaDettaglio);
+        annulla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(0);
+                finish();
+            }
+
+        });
     }
 
     @Override
