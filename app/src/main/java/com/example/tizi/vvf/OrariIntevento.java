@@ -18,7 +18,11 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.tizi.vvf.AuxiliaryClass.Orario;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class OrariIntevento extends FragmentActivity {
 
@@ -111,6 +115,7 @@ public class OrariIntevento extends FragmentActivity {
         ConButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+
                 globalVariables.setOrariIntervento(new Orario(EdUsc.getText().toString(), EdArr.getText().toString(), EdPar.getText().toString(), EdRie.getText().toString()));
                 setResult(1);
                 finish();

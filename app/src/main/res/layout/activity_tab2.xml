@@ -63,7 +63,7 @@
         android:id="@+id/imgMaps"
         android:background="@drawable/maps"
         android:layout_marginBottom="51dp"
-        android:layout_above="@+id/OraBtn"
+        android:layout_above="@+id/OraBtn2"
         android:layout_alignEnd="@+id/textView10" />
 
     <ImageButton
@@ -73,7 +73,7 @@
         android:background="@drawable/camera"
         android:layout_marginEnd="31dp"
         android:layout_alignTop="@+id/imgMaps"
-        android:layout_alignEnd="@+id/OraBtn" />
+        android:layout_alignEnd="@+id/OraBtn2" />
 
 
 
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Orari \n Uscita/Rientro"
-        android:id="@+id/OraBtn"
+        android:id="@+id/OraBtn2"
         android:height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/MezIntBtn"

@@ -23,8 +23,6 @@
     import android.widget.Button;
     import android.widget.ImageButton;
 
-    import com.example.tizi.vvf.AuxiliaryClass.Intervento;
-
     import java.io.File;
 
     public class NuovoIntervento extends FragmentActivity {
@@ -280,7 +278,7 @@
                         Button Note = (Button) rootView.findViewById(R.id.NotBtn);
                         ImageButton Maps = (ImageButton) rootView.findViewById(R.id.imgMaps);
                         ImageButton Camera = (ImageButton) rootView.findViewById(R.id.imgCamera);
-                        Button OraBtn2 = (Button) rootView.findViewById(R.id.OraBtn);
+                        Button OraBtn2 = (Button) rootView.findViewById(R.id.OraBtn2);
 
                         if(previousResult != null) {
                             if (previousResult[5])
@@ -367,6 +365,8 @@
                         case 4:
                             Button ora = (Button) findViewById(R.id.OraBtn);
                             ora.setBackgroundColor(Color.GREEN);
+                            Button ora2 = (Button) findViewById(R.id.OraBtn2);
+                            ora2.setBackgroundColor(Color.GREEN);
                             break;
                         //dettaglio
                         case 5:
@@ -379,8 +379,10 @@
                             note.setBackgroundColor(Color.GREEN);
                             break;
                         case 9:
-                            Button ora2 = (Button) findViewById(R.id.OraBtn);
-                            ora2.setBackgroundColor(Color.GREEN);
+                            Button ora3 = (Button) findViewById(R.id.OraBtn);
+                            ora3.setBackgroundColor(Color.GREEN);
+                            Button ora4 = (Button) findViewById(R.id.OraBtn2);
+                            ora4.setBackgroundColor(Color.GREEN);
                             break;
                     }
                 }
